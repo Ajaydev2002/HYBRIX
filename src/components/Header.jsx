@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -11,19 +11,20 @@ import Navigation from "../consts/Navigation";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import logo from "../assets/logo.png";
 
-const Header = ({ children }) => {
+const Header = (props) => {
 
-    const [isOpen, setIsOpen] = useState(true);
-    const toggle = () => setIsOpen(!isOpen);
+    const { isOpen ,toggle} = props
+
+    console.log("vcvfg",isOpen)
 
     return (
         <div className="container">
 
-            <div style={{ width: isOpen ? "250px" : "60px"}} className="sidebar">
+            <div style={{ width: isOpen ? "240px" : "60px" }} className="sidebar">
 
-                <div className="logo-section" style={{ width: isOpen ? "250px" : "60px"}}>
+                <div className="logo-section" style={{ width: isOpen ? "240px" : "60px" }}>
                     <img src="https://themes.themesbrand.com/hybrix/react-material/light/static/media/logo-dark.00f35cb27393e7e7b073.png" alt="MUI logo" style={{ width: '100px', display: isOpen ? "block" : "none" }} />
-                    <img src={logo} style={{ width: '35px', display: isOpen ? "none" : "block" }}/>
+                    <img src={logo} style={{ width: '35px', display: isOpen ? "none" : "block" }} />
                 </div>
 
                 <div className="sidebar-content">
@@ -49,15 +50,15 @@ const Header = ({ children }) => {
 
 
 
-            <div style={{ marginLeft: isOpen ? "250px" : "60px" }} className="Header-main-content">
+            <div style={{ marginLeft: isOpen ? "240px" : "60px" }} className="Header-main-content">
 
-                <div style={{ left: isOpen ? "250px" : "60px" }} className="header-container">
+                <div style={{ left: isOpen ? "240px" : "60px" }} className="header-container">
 
                     <div className="search-container">
 
-                        <div className="menu-bar"  onClick={toggle} >
-                            <MenuIcon style={{  display: isOpen ? "block" : "none" }}/>
-                            <NavigateNextIcon style={{  display: isOpen ? "none" : "block" }}/>
+                        <div className="menu-bar" onClick={toggle}>
+                            <MenuIcon style={{ display: isOpen ? "block" : "none" }} />
+                            <NavigateNextIcon style={{ display: isOpen ? "none" : "block" }} />
                         </div>
 
                         <SearchIcon sx={{ fontSize: 20, marginRight: 1, marginLeft: 3 }} />
@@ -75,7 +76,6 @@ const Header = ({ children }) => {
                     </div>
                 </div>
 
-                <main>{children}</main>
             </div>
         </div>
     );

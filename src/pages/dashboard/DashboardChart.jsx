@@ -80,7 +80,7 @@ const DashboardChart = () => {
             </div>
 
             <div className='dashboard-chart'>
-                <ResponsiveContainer width="100%" height={300}>
+                <ResponsiveContainer  height={300}>
                     <ComposedChart data={oneYearData}>
 
                         <XAxis dataKey="Month"

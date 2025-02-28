@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
@@ -9,12 +9,22 @@ import Error from "./components/Error.jsx";
 
 const Applayout = () => {
 
-   return (
-     <div className="app">
-       <Header />
-       <Outlet />
-     </div>
-   )
+  const [isOpen, setIsOpen] = useState(true);
+
+  const toggle = () => setIsOpen(!isOpen)
+
+  return (
+    <div className="app">
+
+      <Header isOpen={isOpen} toggle={toggle} />
+
+      <div className="outlet-container" style={{ marginLeft: isOpen ? "240px" : "60px"}}>
+
+        <Outlet />
+        
+      </div>
+    </div>
+  )
 };
 
 
@@ -25,11 +35,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Dashboard />
+        element: <Dashboard  isOpen={isOpen}/>
       },
       {
         path: "/Dashboard",
-        element: <Dashboard />
+        element: <Dashboard isOpen={isOpen}/>
       },
       {
         path: "/Authentication",
