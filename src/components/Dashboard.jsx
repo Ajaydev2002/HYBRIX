@@ -13,16 +13,24 @@ import StockReport from "../pages/dashboard/StockReport";
 import SalesLocation from "../pages/dashboard/SalesLocation";
 import Footer from "../pages/dashboard/Footer";
 import RecentChat from "../pages/dashboard/RecentChat";
+import PersonalChat from "../pages/dashboard/personalChat";
+import { useOutletContext } from "react-router-dom";
 
 
 const Dashboard = () => {
+
+    const { isOpen = false } = useOutletContext() || {}; 
+
+    
+    console.log("isOpen context:", isOpen);  
+
     return (
         <div className="dashboard">
             <div className="dashboard-content">
                 <div className="dashboard-container">
                     <div className="dashboard-section1">
                         <div className="D-total-orders-container">
-                            <TotalEarnings />
+                            <TotalEarnings isOpen={isOpen}/>
                             <Orders />
                             <TotalEarning />
                         </div>
@@ -49,9 +57,6 @@ const Dashboard = () => {
                 <div>
                     <RecentChat />
                 </div>
-            </div>
-            <div>
-                <Footer />
             </div>
         </div>
     )

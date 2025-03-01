@@ -6,11 +6,11 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 const SalesByCategory = () => {
 
-    const [dropdowm, setDropdown] = useState('');
+    const [hoveredPie, setHoveredPie] = useState(null);
 
-    const handleClick = (event) => {
-        setDropdown(event.target.value)
-    }
+    const handleMouseEnter = (data) => setHoveredPie(data);
+
+    const handleMouseLeave = () => setHoveredPie(null); 
 
     const totalValue = pieData.reduce((acc, item) => acc + item.value, 0);
 
@@ -95,14 +95,16 @@ const SalesByCategory = () => {
                                 endAngle={90 - entry.value * 3.6}
                                 fill={entry.color}
                                 stroke="none"
+                                onMouseEnter={() => handleMouseEnter(entry)}
+                                onMouseLeave={handleMouseLeave}
                             />
                         ))}
 
                         <text x="50%" y="40%" textAnchor="middle" dominantBaseline="middle" fontSize={18} fontWeight="bold">
-                            Total
+                            {hoveredPie ? hoveredPie.name : "Total"}
                         </text>
                         <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fontSize={16}>
-                            {totalValue}
+                            {hoveredPie ? `${hoveredPie.value}%` : totalValue}
                         </text>
 
                         <Legend content={<CustomLegand />} />

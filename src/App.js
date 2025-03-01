@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Dashboard from './components/Dashboard.jsx';
 import Authentication from './components/Authentication';
 import Error from "./components/Error.jsx";
+import Footer from "./pages/dashboard/Footer.jsx";
 
 
 const Applayout = () => {
@@ -18,9 +19,10 @@ const Applayout = () => {
 
       <Header isOpen={isOpen} toggle={toggle} />
 
-      <div className="outlet-container" style={{ marginLeft: isOpen ? "240px" : "60px"}}>
+      <div className="outlet-container" style={{ marginLeft: isOpen ? "240px" : "60px", }}>
 
-        <Outlet />
+        <Outlet context={{ isOpen }}/>
+        <Footer/>
         
       </div>
     </div>
@@ -35,11 +37,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Dashboard  isOpen={isOpen}/>
+        element: <Dashboard  />
       },
       {
         path: "/Dashboard",
-        element: <Dashboard isOpen={isOpen}/>
+        element: <Dashboard />
       },
       {
         path: "/Authentication",
@@ -53,3 +55,8 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<RouterProvider router={appRouter} />);
+
+
+if (module.hot) {
+  module.hot.accept(); 
+}

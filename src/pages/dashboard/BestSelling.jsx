@@ -8,14 +8,19 @@ import StarIcon from '@mui/icons-material/Star';
 const BestSelling = () => {
 
     const [page, setPage] = useState(0);
+    const itemsPerPage = 3;
+
+    const totalItems = bestSelling.length;
 
     const handlePrev = () => {
-        setPage();
+        setPage(prev => (prev > 0 ? prev - 1 : prev));
     };
 
     const handleNext = () => {
-        setPage();
+        setPage(prev => (prev < totalItems - itemsPerPage ? prev + 1 : prev));
     };
+
+    const visibleItems = bestSelling.slice(page, page + itemsPerPage);
 
     return (
         <div className="best-selling">
@@ -26,18 +31,18 @@ const BestSelling = () => {
                     <h4>Best Selling Products</h4>
 
                     <div className="page-change-btn">
-                        <div>
-                            <button onClick={handlePrev}> <ArrowBackIosIcon className="back-icon" sx={{ fontSize: "20px", padding: "3px" }} /> </button>
+                        <div onClick={handlePrev} className="backward-btn">
+                            <ArrowBackIosIcon className="back-icon" sx={{ fontSize: "20px", backgroundColor: "rgb(236, 243, 255)",padding: "2px",borderRadius:"4px" }} /> 
                         </div>
-                        <div>
-                            <button onClick={handleNext}> <ArrowForwardIosIcon className="forward-icon" sx={{ fontSize: "20px", padding: "3px" }} /> </button>
+                        <div onClick={handleNext} className="forward-btn">
+                             <ArrowForwardIosIcon className="forward-icon" sx={{ fontSize: "20px",backgroundColor: "rgb(236, 243, 255)",padding: "2px",borderRadius:"4px"  }} /> 
                         </div>
                     </div>
                 </div>
 
                 <div className="bestselling-items-container">
 
-                    {bestSelling.map((item, index) => (
+                    {visibleItems.map((item, index) => (
 
                         <div className="bestsell-item-div" key={index}>
 

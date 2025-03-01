@@ -16,7 +16,6 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 250px;
     overflow-y: auto;
     transition: all 0.5s;
     background-color: #fff;
@@ -43,16 +42,12 @@ body {
     border-bottom: 1px solid rgb(210, 209, 209);
     border-left: 1px solid rgb(210, 209, 209);
     transition: all 0.5s;
+    padding-inline: 24px;
     position: fixed;
     top: 0;
     right: 0;
     background-color: #fff;
     z-index: 2; 
-}
-main {
-    width: 100%;
-    padding-top: 60px; 
-    overflow-y: auto;
 }
 
 
@@ -130,10 +125,6 @@ main {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    margin-right: 15px;
-}
-.search-container{
-    margin-left: 10px;
 }
 .search-bar::placeholder {
     font-size: 15px;

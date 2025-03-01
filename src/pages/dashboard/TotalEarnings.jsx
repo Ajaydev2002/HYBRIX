@@ -2,9 +2,9 @@ import React from "react"
 
 
 
-const TotalEarnings = () => {
+const TotalEarnings = ({ isOpen }) => {
     return (
-        <div className="totalearnings-container">
+        <div className="totalearnings-container" style={{ width: isOpen ? "240px" : "280px", }}>
 
             <div className="balance-content">
                 <div className="available-balance">

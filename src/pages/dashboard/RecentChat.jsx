@@ -16,7 +16,10 @@ const RecentChat = () => {
                     {reChartProfileDetails.map((items, index) => (
 
                         <div className="chat-profile1" key={index}>
-                            <img src={items.img} className="RC-profile-image" />
+                            <div className="profile-container">
+                                <img src={items.img} className="RC-profile-image" />
+                                <span className="online-status"></span>
+                            </div>
                             <p className="RC-profile-name">{items.name}</p>
                         </div>
                     ))
@@ -34,6 +37,7 @@ const RecentChat = () => {
 
                             <div className="chat-profile-container">
                                 <img src={item.img} className="chat-profile-image" />
+                                <span className="online-chat-status"></span>
                             </div>
 
                             <div className="chat-message-content">
@@ -43,7 +47,6 @@ const RecentChat = () => {
 
                             <div className="chat-time-content">
                                 <p>{item.time}</p>
-                                <h5 className="unread-count">{item.unreadcount}</h5>
                             </div>
 
                         </div>

@@ -8,14 +8,23 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+
+
 .dashboard-content {
     display: flex;
     margin-top: 60px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
-
+.dashboard-container {
+    padding-top: 24px;
+}
 .dashboard-section1 {
     display: flex;
 }
+
+
+
 
 .totalearnings-container {
     width: 240px;
@@ -23,49 +32,45 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 6px;
     padding: 20px;
-    margin-left: 24px;
-    margin-top: 24px;
 }
-
 .balance-content {
     display: flex;
     justify-content: space-between;
 }
-
 .available-balance p {
     font-size: 13px;
     color: rgba(20, 24, 33, 0.75);
 }
-
 .available-balance h4 {
     font-size: 20px;
     padding-block: 18px;
     color: rgba(20, 24, 33, 0.75);
 }
-
 .dollar-icon {
     background-color: rgb(206, 250, 225);
     padding: 12px;
     height: 25px;
     border-radius: 5px;
 }
-
 .lastweek-context {
     display: flex;
     align-items: center;
+    padding-bottom: 5px;
 }
-
 .lastweek-context h5 {
     padding-right: 10px;
     color: rgb(45, 203, 115);
     font-size: 12px;
 }
-
 .lastweek-context p {
     font-size: 15px;
     color: rgba(20, 24, 33, 0.75);
     letter-spacing: 0.5;
 }
+
+
+
+
 
 
 
@@ -75,56 +80,50 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 6px;
     padding: 20px;
-    margin-left: 24px;
     margin-top: 24px;
 }
-
 .orders-context {
     display: flex;
     justify-content: space-between;
 }
-
 .cart-icon {
     background-color: rgb(219, 239, 243);
     padding: 12px;
     height: 25px;
     border-radius: 5px;
 }
-
 .orders-text {
     display: flex;
     flex-direction: column;
     align-items: end;
 }
-
 .orders-text p {
     font-size: 13px;
     color: rgba(20, 24, 33, 0.75);
 }
-
 .orders-text h4 {
     font-size: 21px;
     padding-block: 20px;
     color: rgba(20, 24, 33, 0.75);
 }
-
 .orders-lastweek {
     display: flex;
     align-items: center;
     justify-content: end;
     gap: 8px;
+    padding-bottom: 5px;
 }
-
 .orders-lastweek h5 {
     font-size: 12px;
     color: rgb(255, 108, 108);
 }
-
 .orders-lastweek p {
     font-size: 15px;
     color: rgba(20, 24, 33, 0.75);
     letter-spacing: 0.5;
 }
+
+
 
 
 
@@ -136,44 +135,37 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 6px;
     padding: 20px;
-    margin-left: 24px;
     margin-top: 24px;
 }
-
 .Earning-content {
     display: flex;
     justify-content: space-between;
 }
-
 .Earning-balance p {
     font-size: 13px;
     color: rgba(20, 24, 33, 0.75);
 }
-
 .Earning-balance h4 {
     font-size: 20px;
     padding-block: 18px;
     color: rgba(20, 24, 33, 0.75);
 }
-
 .dollar-icon2 {
     background-color: rgb(253, 241, 219);
     padding: 12px;
     height: 25px;
     border-radius: 5px;
 }
-
 .lastweek-context2 {
     display: flex;
     align-items: center;
+    padding-bottom: 5px;
 }
-
 .lastweek-context2 h5 {
     padding-right: 10px;
     color: rgb(45, 203, 115);
     font-size: 12px;
 }
-
 .lastweek-context2 p {
     font-size: 15px;
     color: rgba(20, 24, 33, 0.75);
@@ -183,37 +175,35 @@ body {
 
 
 
+
+
 .D-revenue {
     margin-left: 24px;
-    margin-top: 24px;
 }
-
 .revenue-container {
     width: 610px;
 }
-
 .revenue-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #438eff1a;
+    border-top: 1px solid #438eff1a;
+    border-left: 1px solid #438eff1a;
+    border-right: 1px solid #438eff1a;
     background-color: rgb(255, 255, 255);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     padding: 20px;
 }
-
 .revenue-header h6 {
     font-size: 16px;
     font-weight: 500;
     color: rgba(20, 24, 33, 0.75);
 }
-
 .revenue-header-btn {
     display: flex;
     gap: 8px;
 }
-
 .revenue-header-btn button {
     font-size: 12px;
     height: 30px;
@@ -224,47 +214,40 @@ body {
     outline: none;
     border: none;
 }
-
 .orders-details {
     display: flex;
     flex-flow: wrap;
     text-align: center;
     background-color: rgb(249, 251, 252);
-    width: 620px;
+    width: 610px;
 }
-
 .revene-order {
     border: 1px solid rgba(67, 142, 255, 0.1);
     width: 150px;
     padding-block: 16px;
 }
-
 .revene-order h6 {
     color: rgba(20, 24, 33, 0.75);
     font-size: 18px;
     font-weight: 500;
     padding-bottom: 10px;
 }
-
 .revene-order p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 14px;
     font-weight: 400;
 }
-
 .revenue-earnings {
     border: 1px solid rgba(67, 142, 255, 0.1);
     width: 150px;
     padding-block: 16px;
 }
-
 .revenue-earnings h6 {
     color: rgba(20, 24, 33, 0.75);
     font-size: 18px;
     font-weight: 500;
     padding-bottom: 10px;
 }
-
 .revenue-earnings p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 14px;
@@ -277,26 +260,22 @@ body {
     width: 150px;
     padding-block: 16px;
 }
-
 .revenue-Refunds h6 {
     color: rgba(20, 24, 33, 0.75);
     font-size: 18px;
     font-weight: 500;
     padding-bottom: 10px;
 }
-
 .revenue-Refunds p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 14px;
     font-weight: 400;
 }
-
 .revenue-ratio {
     border: 1px solid rgba(67, 142, 255, 0.1);
     width: 150px;
     padding-block: 16px;
 }
-
 .revenue-ratio h6 {
     color: rgba(20, 24, 33, 0.75);
     font-size: 18px;
@@ -304,7 +283,6 @@ body {
     padding-bottom: 10px;
     color: rgb(45, 203, 115);
 }
-
 .revenue-ratio p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 14px;
@@ -314,7 +292,9 @@ body {
 
 .dashboard-chart {
     padding-top: 20px;
-    border: 1px solid #438eff1a;
+    border-bottom: 1px solid #438eff1a;
+    border-left: 1px solid #438eff1a;
+    border-right: 1px solid #438eff1a;
     background-color: rgb(255, 255, 255);
 }
 
@@ -416,12 +396,11 @@ body {
 
 
 .sales-container {
-    margin-left: 24px;
     margin-top: 24px;
 }
 
 .upgrade-benifits {
-    width: 880px;
+    width: 875px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -469,12 +448,11 @@ body {
 
 
 .recent-order {
-    margin-left: 24px;
     margin-top: 24px;
 }
 
 .recent-order-container {
-    width: 910px;
+    width: 915px;
 }
 
 .recentorder-header {
@@ -483,35 +461,46 @@ body {
     padding: 20px;
     border: 1px solid rgba(67, 142, 255, 0.1);
 }
-
 .RO-header-text p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 16px;
     font-weight: 500;
 }
 
+
 .dropdown-container label {
     color: rgba(20, 24, 33, 0.75);
     font-size: 12px;
 }
-
 .dropdown-container select {
+    font-size: 14px; 
+    width: 100px; 
     color: rgba(20, 24, 33, 0.75);
-    font-size: 14px;
-    padding: 3px;
-    outline: none;
     border: none;
+    outline: none;
 }
+.dropdown-container option {
+    width: 200px; 
+    font-size: 14px;
+    color: rgba(20, 24, 33, 0.75);
+    border: none;
+    outline: none;
+    text-decoration: none;
+    padding-inline: 40px;
+}
+.dropdown-container option:hover {
+    background-color: #f0f0f0;
+    color: #333; 
+}
+
 
 .customer-details-container {
     width: 100%;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
 }
-
 th {
     text-align: left;
     padding: 12px;
@@ -593,9 +582,7 @@ td {
     display: flex;
 }
 
-
 .best-selling {
-    margin-left: 24px;
     margin-top: 24px;
 }
 
@@ -616,35 +603,30 @@ td {
     color: rgba(20, 24, 33, 0.75);
 }
 
-.page-change-btn button {
-    border: none;
-    width: 20px;
-    height: 20px;
-}
-
 .page-change-btn {
     display: flex;
     justify-content: space-between;
     gap: 15px;
     padding-block: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
-.back-icon {
+.backward-btn {
     color: #007aff;
-    background-color: rgb(236, 243, 255);
     cursor: pointer;
+    border-radius: 4px;
 }
 
-.forward-icon {
+.forward-btn {
     color: #007aff;
-    background-color: rgb(236, 243, 255);
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .bestselling-items-container {
     display: flex;
     overflow: hidden;
+    transition: transform 0.9s ease-in-out;
 }
 
 .bestsell-item-div {
@@ -711,7 +693,7 @@ td {
 }
 
 .product-delivery-container {
-    width: 285px;
+    width: 300px;
     border: 1px solid rgba(67, 142, 255, 0.1);
     border-radius: 6px;
 }
@@ -820,12 +802,13 @@ td {
 
 
 
+
+
 .sales-stock {
     display: flex;
 }
 
 .sales-by-category {
-    margin-left: 24px;
     margin-top: 24px;
 }
 
@@ -925,6 +908,9 @@ td {
     margin-left: -5px;
     font-size: 12px;
 }
+
+
+
 
 
 
@@ -1048,14 +1034,12 @@ td {
 
 
 
-
 .saleslocation {
-    margin-left: 24px;
     margin-top: 24px;
 }
 
 .saleslocation-container {
-    width: 910px;
+    width: 914px;
     border: 1px solid rgba(67, 142, 255, 0.1);
 }
 
@@ -1088,7 +1072,7 @@ td {
 }
 
 .location img {
-    width: 650px;
+    width: 600px;
     height: 400px;
 }
 
@@ -1104,7 +1088,7 @@ td {
     font-size: 12px;
     letter-spacing: 0.5;
     font-weight: 500;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .satistics-header h4 {
@@ -1112,7 +1096,7 @@ td {
     font-weight: 500;
     color: rgba(20, 24, 33, 0.75);
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .satistics-header h4 span {
@@ -1138,35 +1122,37 @@ td {
     background-color: #e5e7eb;
     margin-bottom: 20px;
 }
-
 .progress-bar-segment {
     height: 100%;
 }
-
 .country-detail {
     display: flex;
     margin-block: 8px;
 }
-
 .country-name {
     color: rgba(20, 24, 33, 0.75);
 }
-
 .country-percent {
     color: rgba(20, 24, 33, 0.75);
     margin-left: auto;
 }
 
+
+
+
+
+.footer {
+    background-color: #fff;
+    border: 1px solid rgba(67, 142, 255, 0.1);
+    margin-top: 20px;
+}
 .footer-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(67, 142, 255, 0.1);
     padding: 24px 20px;
-    margin-top: 20px;
+    z-index: 1000;
 }
-
 .footer-container p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 13px;
@@ -1178,13 +1164,16 @@ td {
 
 .recent-chat {
     margin-left: 24px;
+    padding-top: 12px;
 }
 .recent-chat-container {
     position: fixed;
-    right: 0;
-    height: 100%;
+    right: 24;
+    top: 70;
+    bottom: 40;
+    width: 290px;
+    height: 100vh;
     overflow-y: auto;
-    overflow-x: auto;
     border: 1px solid rgba(67, 142, 255, 0.1);
 }
 .recent-chat-container::-webkit-scrollbar {
@@ -1203,7 +1192,7 @@ td {
     padding-left: 20px;
 }
 .RC-profile-image {
-    width: 50px;
+    width: 48px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
@@ -1216,8 +1205,34 @@ td {
     justify-content: space-between;
     gap: 15px;
     padding-left: 20px;
-    width: 290px;
+    overflow-x: scroll;
 }
+.chat-profile::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.online-status {
+    position: absolute;
+    bottom: 13px;
+    right: 1px;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(68, 183, 0);
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: blink-animation 1.5s infinite;
+}
+@keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
 .RC-search-bar {
     display: flex;
     align-items: center;
@@ -1240,26 +1255,48 @@ td {
     display: flex;
     align-items: center;
     padding-left: 20px;
-    width: 100%;
-    padding-block: 10px;
+    padding-block: 13px;
     border-bottom: 1px solid rgba(67, 142, 255, 0.1);
+}
+.chat-profile-container{
+    position: relative;
+    display: inline-block;
 }
 .chat-profile-image {
     width: 32px;
     border-radius: 50%;
+}
+.online-chat-status {
+    position: absolute;
+    bottom: 2px;
+    right: 0px;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(68, 183, 0);
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: blink-animation 1.5s infinite;
+}
+
+@keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
 .chat-message-content {
     margin-left: 10px;
 }
 .chat-message-content h6 {
     font-size: 13px;
-    font-weight: 600;
-    color: rgba(20, 24, 33, 0.75);
+    font-weight: 500;
+    color: rgba(2, 3, 4, 0.75);
     padding-bottom: 7px;
+    letter-spacing: 0.5;
 }
 .chat-message-content p {
-    font-size: 13px;
+    font-size: 12px;
     color: rgba(20, 24, 33, 0.75);
+    letter-spacing: 0.5;
 }
 .chat-time-content {
     display: flex;
@@ -1270,6 +1307,7 @@ td {
     font-size: 12px;
     font-weight: 400;
     color: rgba(20, 24, 33, 0.75);
+    padding-right: 5px;
 }
 .unread-count {
     color: rgb(74, 176, 193);
@@ -1278,4 +1316,24 @@ td {
     border-radius: 50%;
     font-size: 10px;
     font-weight: 700;
+}
+
+
+
+
+.chats-container {
+    display: flex;
+    flex-direction: column;
+}
+.chat-sender-image {
+    width: 30px;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+}
+.exit-icon-content {
+    display: flex;
+    align-items: center;
 }

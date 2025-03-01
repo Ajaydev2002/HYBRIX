@@ -20,7 +20,7 @@ const ProfilePopper = () => {
 
     return (
         <Box>
-            <Box sx={{ marginRight: 1 }} onClick={handleClick}>
+            <Box onClick={handleClick}>
                 <div className="profile-section1">
                     <div>
                         <img src="https://themes.themesbrand.com/hybrix/react-material/light/static/media/avatar-1.8d5d7e809a27a1717ed1.jpg" className="profile-image"/>
