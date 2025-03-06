@@ -11,17 +11,17 @@ import ProductDelivery from "../pages/dashboard/ProductDelivery";
 import SalesByCategory from "../pages/dashboard/SalesByCategory";
 import StockReport from "../pages/dashboard/StockReport";
 import SalesLocation from "../pages/dashboard/SalesLocation";
-import Footer from "../pages/dashboard/Footer";
 import RecentChat from "../pages/dashboard/RecentChat";
-import PersonalChat from "../pages/dashboard/personalChat";
 import { useOutletContext } from "react-router-dom";
+import Demo from "../pages/dashboard/ChatApp";
+import ChatApp from "../pages/dashboard/ChatApp";
 
 
 const Dashboard = () => {
 
     const { isOpen = false } = useOutletContext() || {}; 
 
-    
+
     console.log("isOpen context:", isOpen);  
 
     return (

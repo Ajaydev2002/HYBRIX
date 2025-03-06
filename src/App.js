@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard.jsx';
 import Authentication from './components/Authentication';
 import Error from "./components/Error.jsx";
 import Footer from "./pages/dashboard/Footer.jsx";
+import PersonalChat from "./pages/dashboard/PersonalChat.jsx"
 
 
 const Applayout = () => {
@@ -46,9 +47,13 @@ const appRouter = createBrowserRouter([
       {
         path: "/Authentication",
         element: <Authentication />
-      }
+      },
+      {
+        path: "/Personal",
+        element: <PersonalChat/>
+      },
     ],
-    errorElement: <Error />
+    errorElement: <Error/>
   },
 ]);
 

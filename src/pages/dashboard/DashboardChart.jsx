@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComposedChart, Bar, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import oneYearData from '../../consts/oneYearData';
+import sixMonthData from '../../consts/sixMonthData';
+import oneMonthData from '../../consts/oneMonthData';
+import allMonthData from '../../consts/allMonthData';
 
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
+
         const { Month, Orders, Earnings, Refunds } = payload[0].payload;
+
         return (
             <div className='tooltip-container'>
                 <div className='tooltip-month'>
@@ -44,6 +49,13 @@ const CustomLegand = () => {
 
 
 const DashboardChart = () => {
+
+    const [pieData, setPieData] = useState(oneYearData);
+
+    const handleButtonClick = (newData) => {
+        setPieData(newData);
+    }
+
     return (
 
         <div className='dashboard-chart-container'>
@@ -52,10 +64,10 @@ const DashboardChart = () => {
                 <div className="revenue-header">
                     <h6>Revenue</h6>
                     <div className="revenue-header-btn">
-                        <button>ALL</button>
-                        <button>1M</button>
-                        <button>6M</button>
-                        <button>1Y</button>
+                        <button onClick={() => { handleButtonClick(allMonthData) }}>ALL</button>
+                        <button onClick={() => { handleButtonClick(oneMonthData) }}>1M</button>
+                        <button onClick={() => { handleButtonClick(sixMonthData) }}>6M</button>
+                        <button onClick={() => { handleButtonClick(oneYearData) }}>1Y</button>
                     </div>
                 </div>
 
@@ -80,8 +92,10 @@ const DashboardChart = () => {
             </div>
 
             <div className='dashboard-chart'>
-                <ResponsiveContainer  height={300}>
-                    <ComposedChart data={oneYearData}>
+
+                <ResponsiveContainer height={300}>
+
+                    <ComposedChart data={pieData}>
 
                         <XAxis dataKey="Month"
                             axisLine={false}
@@ -91,13 +105,11 @@ const DashboardChart = () => {
                         <YAxis axisLine={false}
                             tickLine={false}
                             domain={[0, 100]}
-                            ticks={[0.00, 20.00, 40.00, 60.00, 80.00, 100.00]}
+                            ticks={(pieData === oneMonthData || pieData === oneYearData) ? [0.00, 20.00, 40.00, 60.00, 80.00, 100.00] : [0.00, 30.00, 60.00, 90.00, 120.00]}
                             tickFormatter={(value) => value.toFixed(2)}
                             tick={{ fontSize: 10 }} />
 
                         <Tooltip content={<CustomTooltip />} />
-
-                        <Legend content={<CustomLegand />} />
 
                         <Bar dataKey="Earnings"
                             fill='#438eff'
@@ -110,6 +122,9 @@ const DashboardChart = () => {
                             strokeDasharray="7 8"
                             dot={false} />
 
+
+                        <Legend content={<CustomLegand />} />
+                        
                     </ComposedChart>
                 </ResponsiveContainer>
             </div>

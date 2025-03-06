@@ -7,16 +7,20 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 const SalesByCategory = () => {
 
     const [hoveredPie, setHoveredPie] = useState(null);
+    const [salesMenu, setSalesMenu] = useState(false);
+
+    const salesDropdown = () => setSalesMenu(!salesMenu)
 
     const handleMouseEnter = (data) => setHoveredPie(data);
 
-    const handleMouseLeave = () => setHoveredPie(null); 
+    const handleMouseLeave = () => setHoveredPie(null);
 
     const totalValue = pieData.reduce((acc, item) => acc + item.value, 0);
 
 
     const CustomLegand = () => {
         return (
+            
             <div className="pielegand-container">
                 <div className='pielegand-context1'>
                     <button className='fashion-btn'>
@@ -53,17 +57,29 @@ const SalesByCategory = () => {
                         <h5>Sales by Category</h5>
                     </div>
 
-                    <div className="sales-category-dropdown">
-                        <p>Report</p>
-                        <svg width="30" height="30" viewBox="0 0 25 30" fill="rgba(20, 24, 33, 0.75)">
-                            <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-                        </svg>
+                    <div className="sales-category-dropdown-container" >
+
+                        <div className="sales-category-dropdown"  onClick={salesDropdown}>
+
+                            <div><p>Report</p></div>
+                            <div className="dropdown-icon-containeer">
+                                <svg width="30" height="30" viewBox="0 0 25 30" fill="rgba(20, 24, 33, 0.75)">
+                                    <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div className="sales-dropdown" style={{ display: salesMenu ? "block" : "none", }} >
+                            <p>Download Report</p>
+                            <p>Export</p>
+                            <p>Import</p>
+                        </div>
                     </div>
                 </div>
 
                 <div>
-                    <PieChart width={300} height={300}>
-
+                    <PieChart width={300} height={300} >
 
                         {pieData.map((entry, index) => (
                             <Pie
@@ -72,8 +88,8 @@ const SalesByCategory = () => {
                                 dataKey="value"
                                 cx="50%"
                                 cy="50%"
-                                innerRadius={55 + index * 11}
-                                outerRadius={60 + index * 11}
+                                innerRadius={55 + index * 10}
+                                outerRadius={60 + index * 10}
                                 startAngle={90}
                                 endAngle={-270}
                                 fill="#f0f0f0"
@@ -89,18 +105,18 @@ const SalesByCategory = () => {
                                 nameKey="name"
                                 cx="50%"
                                 cy="50%"
-                                innerRadius={55 + index * 11}
-                                outerRadius={60 + index * 11}
+                                innerRadius={55 + index * 10}
+                                outerRadius={60 + index * 10}
                                 startAngle={90}
                                 endAngle={90 - entry.value * 3.6}
-                                fill={entry.color}
+                                fill={hoveredPie && hoveredPie.name === entry.name ? entry.bgcolor : entry.color}
                                 stroke="none"
                                 onMouseEnter={() => handleMouseEnter(entry)}
                                 onMouseLeave={handleMouseLeave}
                             />
                         ))}
 
-                        <text x="50%" y="40%" textAnchor="middle" dominantBaseline="middle" fontSize={18} fontWeight="bold">
+                        <text x="50%" y="40%" textAnchor="middle" dominantBaseline="middle" fontSize={18} fontWeight="600" >
                             {hoveredPie ? hoveredPie.name : "Total"}
                         </text>
                         <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fontSize={16}>

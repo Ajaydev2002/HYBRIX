@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Gantari', sans-serif;
 }
 
 
@@ -42,9 +42,10 @@ body {
     color: rgba(20, 24, 33, 0.75);
 }
 .available-balance h4 {
-    font-size: 20px;
     padding-block: 18px;
     color: rgba(20, 24, 33, 0.75);
+    font-size: 22px;
+    font-weight: 600;
 }
 .dollar-icon {
     background-color: rgb(206, 250, 225);
@@ -63,7 +64,7 @@ body {
     font-size: 12px;
 }
 .lastweek-context p {
-    font-size: 15px;
+    font-size: 16px;
     color: rgba(20, 24, 33, 0.75);
     letter-spacing: 0.5;
 }
@@ -102,9 +103,10 @@ body {
     color: rgba(20, 24, 33, 0.75);
 }
 .orders-text h4 {
-    font-size: 21px;
     padding-block: 20px;
     color: rgba(20, 24, 33, 0.75);
+    font-size: 22px;
+    font-weight: 600;
 }
 .orders-lastweek {
     display: flex;
@@ -118,7 +120,7 @@ body {
     color: rgb(255, 108, 108);
 }
 .orders-lastweek p {
-    font-size: 15px;
+    font-size: 16px;
     color: rgba(20, 24, 33, 0.75);
     letter-spacing: 0.5;
 }
@@ -146,9 +148,10 @@ body {
     color: rgba(20, 24, 33, 0.75);
 }
 .Earning-balance h4 {
-    font-size: 20px;
     padding-block: 18px;
     color: rgba(20, 24, 33, 0.75);
+    font-size: 22px;
+    font-weight: 600;
 }
 .dollar-icon2 {
     background-color: rgb(253, 241, 219);
@@ -167,7 +170,7 @@ body {
     font-size: 12px;
 }
 .lastweek-context2 p {
-    font-size: 15px;
+    font-size: 16px;
     color: rgba(20, 24, 33, 0.75);
     letter-spacing: 0.5;
 }
@@ -200,6 +203,7 @@ body {
     font-weight: 500;
     color: rgba(20, 24, 33, 0.75);
 }
+
 .revenue-header-btn {
     display: flex;
     gap: 8px;
@@ -213,6 +217,11 @@ body {
     border-radius: 4px;
     outline: none;
     border: none;
+    cursor: pointer;
+}
+.revenue-header-btn button:hover {
+    background-color: #fff;
+    color: rgb(133, 97, 249);
 }
 .orders-details {
     display: flex;
@@ -229,29 +238,30 @@ body {
 .revene-order h6 {
     color: rgba(20, 24, 33, 0.75);
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 10px;
 }
 .revene-order p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
 }
 .revenue-earnings {
     border: 1px solid rgba(67, 142, 255, 0.1);
     width: 150px;
     padding-block: 16px;
 }
+
 .revenue-earnings h6 {
     color: rgba(20, 24, 33, 0.75);
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 10px;
 }
 .revenue-earnings p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 
@@ -263,13 +273,13 @@ body {
 .revenue-Refunds h6 {
     color: rgba(20, 24, 33, 0.75);
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 10px;
 }
 .revenue-Refunds p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
 }
 .revenue-ratio {
     border: 1px solid rgba(67, 142, 255, 0.1);
@@ -286,8 +296,11 @@ body {
 .revenue-ratio p {
     color: rgba(20, 24, 33, 0.75);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
 }
+
+
+
 
 
 .dashboard-chart {
@@ -297,7 +310,6 @@ body {
     border-right: 1px solid #438eff1a;
     background-color: rgb(255, 255, 255);
 }
-
 .tooltip-month {
     background-color: #eceff1;
     border-top-left-radius: 6px;
@@ -503,7 +515,7 @@ table {
 }
 th {
     text-align: left;
-    padding: 12px;
+    padding: 15px;
     font-size: 13px;
 }
 
@@ -823,7 +835,8 @@ td {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgba(67, 142, 255, 0.1);
-    padding: 20px;
+    padding-inline: 20px;
+    padding-block: 15px;
 }
 
 .sales-category-header-name h5 {
@@ -832,6 +845,10 @@ td {
     color: rgba(20, 24, 33, 0.75);
 }
 
+
+.sales-category-dropdown-container {
+    position: relative;
+}
 .sales-category-dropdown {
     display: flex;
     align-items: center;
@@ -841,6 +858,30 @@ td {
     font-size: 13px;
     font-weight: 400;
 }
+.dropdown-icon-containeer {
+    padding-top: 10px;
+}
+.sales-dropdown {
+    position: absolute;
+    top: 60px;
+    left: -80px;
+    width: 150px;
+    z-index: 1000px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(67, 142, 255, 0.1);
+    box-shadow: rgba(149, 149, 149, 0.14) 0px 8px 10px 1px, rgba(149, 149, 149, 0.14) 0px 8px 10px 1px, rgba(149, 149, 149, 0.14) 0px 8px 10px 1px;
+    border-radius: 3px;
+}
+.sales-dropdown p {
+    padding-block: 11px;
+    padding-inline: 10px;
+    font-size: 14px;
+    color: #252424;
+}  
+.sales-dropdown p:hover {
+   background-color: #f0f0f0;
+}
+
 
 .pielegand-container {
     display: flex;
@@ -1161,18 +1202,17 @@ td {
 
 
 
-
 .recent-chat {
     margin-left: 24px;
     padding-top: 12px;
+    position: relative;
 }
 .recent-chat-container {
     position: fixed;
     right: 24;
-    top: 70;
-    bottom: 40;
+    top: 60;
     width: 290px;
-    height: 100vh;
+    height: 92vh;
     overflow-y: auto;
     border: 1px solid rgba(67, 142, 255, 0.1);
 }
@@ -1238,6 +1278,7 @@ td {
     align-items: center;
     border: 1px solid rgba(67, 142, 255, 0.1);
    padding-block: 8px;
+   border-radius: 5px;
     margin-top: 35px;
     margin-bottom: 20px;
     margin-left: 20px;
@@ -1246,17 +1287,33 @@ td {
     border: none;
     letter-spacing: 0.5;
 }
+.RC-search-bar input {
+    outline: none;
+    font-size: 15px;
+    padding: 5px;
+}
+
+
+
 
 
 .list-of-chat{
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 .chat-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding-left: 20px;
     padding-block: 13px;
     border-bottom: 1px solid rgba(67, 142, 255, 0.1);
+}
+.outer-profile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 .chat-profile-container{
     position: relative;
@@ -1286,22 +1343,24 @@ td {
 .chat-message-content {
     margin-left: 10px;
 }
-.chat-message-content h6 {
+.message-style {
+    color: rgb(74, 176, 193);
     font-size: 13px;
-    font-weight: 500;
+}
+.chat-message-content h6 {
+    font-size: 14px;
+    font-weight: 600;
     color: rgba(2, 3, 4, 0.75);
     padding-bottom: 7px;
-    letter-spacing: 0.5;
 }
-.chat-message-content p {
-    font-size: 12px;
+.message-normal {
+    font-size: 13px;
     color: rgba(20, 24, 33, 0.75);
-    letter-spacing: 0.5;
 }
 .chat-time-content {
     display: flex;
     flex-direction: column;
-   margin-left: auto;
+    margin-left: auto;
 }
 .chat-time-content p {
     font-size: 12px;
@@ -1309,31 +1368,218 @@ td {
     color: rgba(20, 24, 33, 0.75);
     padding-right: 5px;
 }
-.unread-count {
+.unread-counts {
     color: rgb(74, 176, 193);
-    width: 18px;
-    height: 18px;
+    background-color: rgb(219, 239, 243);
+    padding: 2px;
     border-radius: 50%;
-    font-size: 10px;
-    font-weight: 700;
+    margin-left: auto;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    font-size: 12px;
 }
 
 
 
-
-.chats-container {
-    display: flex;
-    flex-direction: column;
+.chat-section {
+    position: absolute;
+    top: 60;
+    right: 24;
+    background-color: #fff;
+    height: 92vh;
+    z-index: 1;
+    position: fixed;
+    width: 270px;
+    overflow-y: scroll;
+    padding-inline: 10px;
 }
-.chat-sender-image {
-    width: 30px;
+.chat-section::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
 }
-
+.chat-section::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
 .chat-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
+    padding-bottom: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(67, 142, 255, 0.1);
+}
+.online-status-chat {
+    position: relative;
+    bottom: -10px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(68, 183, 0);
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: blink-animation 1.5s infinite;
+    z-index: 100;
+}
+@keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+.chat-header-image-section {
+    display: flex;
+    align-items: center;
+}
+.chat-header-image {
+    width: 30px;
+    border-radius: 50%;
+}
+.chat-header-image-section h6 {
+    font-size: 13px;
+    padding-left: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5;
+    color: rgba(20, 24, 33, 0.75);
 }
 .exit-icon-content {
     display: flex;
     align-items: center;
+}
+.exit-icon-content {
+    cursor: pointer;
+}
+.chat-menu-section {
+    position: absolute;
+    top: 60;
+    right: 30px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(67, 142, 255, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
+    border-radius: 3px;
+}
+.archive-section {
+    display: flex;
+    align-items: center;
+    padding: 8px 50px 8px 10px;
+    color: rgba(0, 0, 0, 0.54);
+}
+.archive-section:hover {
+    background-color: #f0f0f0;
+}
+.archive-section p {
+    font-size: 15px;
+    margin-left: 8px;
+}
+.share-section {
+    display: flex;
+    align-items: center;
+    padding: 8px 50px 8px 10px;
+    color: rgba(0, 0, 0, 0.54);
+}
+.share-section:hover {
+    background-color: #f0f0f0;
+}
+.share-section p {
+    font-size: 15px;
+    margin-left: 8px;
+}
+.delete-section {
+    display: flex;
+    align-items: center;
+    padding: 8px 50px 8px 10px;
+    color: rgba(0, 0, 0, 0.54);
+}
+.delete-section:hover {
+    background-color: #f0f0f0;
+}
+.delete-section p {
+    font-size: 15px;
+    margin-left: 8px;
+}
+
+
+
+
+.chat-detail1 {
+    display: flex;
+    padding-block: 10px;
+}   
+.msg-received {
+    max-width: 200px;
+    font-size: 13px;
+    background-color: rgb(239, 242, 247);
+    box-shadow: rgba(135, 138, 153, 0.1) 0px 5px 20px -6px;
+    padding: 12px 20px;
+    border-radius: 12px 12px 12px 0px;
+    font-weight: 400;
+    letter-spacing: 0.5;
+    line-height: 1.5;
+}
+.msg-send {
+    max-width: 200px;
+    font-size: 13px;
+    background-color: rgb(67, 142, 255);
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(135, 138, 153, 0.1) 0px 5px 20px -6px;
+    padding: 12px 20px;
+    border-radius: 12px 12px 0px 12px;
+    font-weight: 400;
+    letter-spacing: 0.5;
+    line-height: 1.5;
+}
+.msg {
+    cursor: pointer;
+}
+.chat-sender-msg1 p {
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.chat-time-content-received {
+    display: flex;
+    flex-direction: row;
+}
+.chat-time-content-send {
+    text-align: right;
+    font-size: 12px;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: end;
+}
+
+.seen-status {
+    margin-top: 10px;
+}
+
+.chat-sender-image {
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.send-message-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 10px;
+}
+.send-message-imput-section {
+    border: 1px solid rgba(67, 142, 255, 0.1);
+}
+.send-message-imput-section input {
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 14px;
+} 
+.send-message-imput-section input ::placeholder {
+    letter-spacing: 0.5;
+}
+.message-send-btn {
+    background-color: rgb(67, 142, 255);
+    padding: 8px;
+    border-radius: 4px;
 }
