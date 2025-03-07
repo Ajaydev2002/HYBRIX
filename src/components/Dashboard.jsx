@@ -13,16 +13,12 @@ import StockReport from "../pages/dashboard/StockReport";
 import SalesLocation from "../pages/dashboard/SalesLocation";
 import RecentChat from "../pages/dashboard/RecentChat";
 import { useOutletContext } from "react-router-dom";
-import Demo from "../pages/dashboard/ChatApp";
-import ChatApp from "../pages/dashboard/ChatApp";
+
 
 
 const Dashboard = () => {
 
-    const { isOpen = false } = useOutletContext() || {}; 
-
-
-    console.log("isOpen context:", isOpen);  
+    const { isOpen } = useOutletContext() || {}; 
 
     return (
         <div className="dashboard">
@@ -31,31 +27,31 @@ const Dashboard = () => {
                     <div className="dashboard-section1">
                         <div className="D-total-orders-container">
                             <TotalEarnings isOpen={isOpen}/>
-                            <Orders />
-                            <TotalEarning />
+                            <Orders isOpen={isOpen}/>
+                            <TotalEarning isOpen={isOpen}/>
                         </div>
                         <div className="D-revenue">
-                            <DashboardChart />
+                            <DashboardChart isOpen={isOpen}/>
                         </div>
                     </div>
                     <div>
-                        <MoreSales />
-                        <RecentOrders />
+                        <MoreSales isOpen={isOpen}/>
+                        <RecentOrders isOpen={isOpen}/>
                     </div>
                     <div className="product-selling">
-                        <BestSelling />
-                        <ProductDelivery />
+                        <BestSelling isOpen={isOpen}/>
+                        <ProductDelivery isOpen={isOpen}/>
                     </div>
                     <div className="sales-stock">
-                        <SalesByCategory />
-                        <StockReport />
+                        <SalesByCategory isOpen={isOpen}/>
+                        <StockReport isOpen={isOpen}/>
                     </div>
                     <div>
-                        <SalesLocation />
+                        <SalesLocation isOpen={isOpen}/>
                     </div>
                 </div>
                 <div>
-                    <RecentChat />
+                    <RecentChat isOpen={isOpen}/>
                 </div>
             </div>
         </div>

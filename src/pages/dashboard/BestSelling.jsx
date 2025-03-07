@@ -5,7 +5,7 @@ import bestSelling from "../../consts/bestSelling";
 import StarIcon from '@mui/icons-material/Star';
 
 
-const BestSelling = () => {
+const BestSelling = ({ isOpen }) => {
 
     const [page, setPage] = useState(0);
     const itemsPerPage = 3;
@@ -24,7 +24,7 @@ const BestSelling = () => {
 
     return (
         <div className="best-selling">
-            <div className="best-selling-container">
+            <div className="best-selling-container" style={{ width: isOpen ? "590px" : "690px", }}>
 
                 <div className="bestselling-header">
 
@@ -44,12 +44,12 @@ const BestSelling = () => {
 
                     {visibleItems.map((item, index) => (
 
-                        <div className="bestsell-item-div" key={index}>
+                        <div className="bestsell-item-div" key={index}  style={{ width: isOpen ? "185.667px" : "220px", }}>
 
                             <div className="bestselling-item" >
 
                                 <div className="bestselling-image-container">
-                                    <img src={item.img} className="bestsell-image" />
+                                    <img src={item.img} className="bestsell-image" style={{ width: isOpen ? "150px" : "175px", }}/>
                                 </div>
 
                                 <div className="bestsell-details">

@@ -26,7 +26,7 @@ const ProfilePopper = () => {
                         <img src="https://themes.themesbrand.com/hybrix/react-material/light/static/media/avatar-1.8d5d7e809a27a1717ed1.jpg" className="profile-image"/>
                     </div>
                     <div className="profile-section1-context1">
-                        <h5>Admin</h5>
+                        <h5>Ajay Dev</h5>
                         <p>Founder</p>
                     </div>
                 </div>

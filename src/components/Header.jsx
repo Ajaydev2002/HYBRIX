@@ -15,8 +15,6 @@ const Header = (props) => {
 
     const { isOpen ,toggle} = props
 
-    console.log("vcvfg",isOpen)
-
     return (
         <div className="container">
 

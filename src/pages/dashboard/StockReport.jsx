@@ -1,10 +1,10 @@
 import React from "react";
 import stockReportDetails from "../../consts/stockReportDetails";
 
-const StockReport = () => {
+const StockReport = ({ isOpen }) => {
     return (
         <div className="stockreport">
-            <div className="stockreport-container">
+            <div className="stockreport-container" style={{ width: isOpen ? "610px" : "703px", }}>
 
                 <div className="stockreport-header">
                     <div className="stockreport-heading">

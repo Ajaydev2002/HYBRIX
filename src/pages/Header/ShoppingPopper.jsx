@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { IconButton, Popper, Paper, Box, Badge } from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CloseIcon from '@mui/icons-material/Close';
 import { styled } from "@mui/material/styles";
 
 
 const CartBadge = styled(Badge)({
   "& .MuiBadge-badge": {
-    top: -8,
-    right: -4,
+    top: -2,
+    right: 0,
   },
 });
 
@@ -18,10 +17,11 @@ const ShoppingPopper = () => {
 
 
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Branded T-shirts", quantity: 10, price: 32, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-1.3479ed54a1fdc6027c39.png" },
-    { id: 2, name: "Branded T-shirts", quantity: 5, price: 18, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-2.653d95e8f43c13e97162.png" },
-    { id: 3, name: "Branded T-shirts", quantity: 3, price: 250, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-3.5937b7accb11fe5add30.png" },
-    { id: 4, name: "Branded T-shirts", quantity: 2, price: 495, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-5.10b7411f7c15d357a411.png" }
+    { id: 1, name: "Branded T-shirts", quantity: 10, price: 320, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-1.3479ed54a1fdc6027c39.png" },
+    { id: 2, name: "Bendwood T-shirt", quantity: 5, price: 180, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-2.653d95e8f43c13e97162.png" },
+    { id: 3, name: "Titan Watch", quantity: 3, price: 250, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-3.5937b7accb11fe5add30.png" },
+    { id: 4, name: "Adidas best for walk", quantity: 2, price: 400, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-5.10b7411f7c15d357a411.png" },
+    { id: 5, name: "Branded T-shirt", quantity: 1, price: 243, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-6.f80c5f48c1fa4bb8e9cb.png" }
   ]);
 
   const handleClick = (event) => {
@@ -29,12 +29,12 @@ const ShoppingPopper = () => {
     setOpen((prev) => !prev);
   };
 
- 
+
   const handleRemove = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
- 
+
   const totalPrice = cartItems.reduce((total, item) => total + item.quantity * item.price, 0);
 
   return (
@@ -42,7 +42,9 @@ const ShoppingPopper = () => {
 
       <IconButton onClick={handleClick}>
         <CartBadge badgeContent={cartItems.length} color="primary" overlap="circular">
-          <ShoppingCartIcon fontSize="small" />
+          <svg width="20" height="20" viewBox="0 0 25 25" fill="rgba(20, 24, 33, 0.75)">
+            <path d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2l.01-11c0-1.11.88-2 1.99-2h4V4c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v2h4z" />
+          </svg>
         </CartBadge>
       </IconButton>
 
@@ -50,14 +52,14 @@ const ShoppingPopper = () => {
         <Paper sx={{ padding: 2, boxShadow: 3, bgcolor: "background.paper", marginTop: "16px" }}>
           <Box sx={{ zIndex: 100 }}>
             <div className="shopping-container">
-              
+
               <div className="shopping-header">
                 <h3>My Cart</h3>
                 <p>{cartItems.length} items</p>
               </div>
 
               <div className="shoppingitems">
-                
+
                 {cartItems.length > 0 ? (
 
                   cartItems.map((item) => (

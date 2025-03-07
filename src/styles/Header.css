@@ -315,11 +315,12 @@ body {
 }
 .bag-section1-text h4 {
     font-size: 13px;
-    color: rgb(122, 121, 121);
     padding-block: 6px;
+    font-weight: 400;
 }
 .bag-section1-text p{
     font-size: 13px;
+    color: rgb(122, 121, 121);
 }
 .bag-section2 {
     display: flex;
@@ -327,7 +328,7 @@ body {
 }
 .price {
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .total-container{
     display: flex;

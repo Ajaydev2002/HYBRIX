@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { IconButton, Popper, Paper, Box, Badge } from "@mui/material";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import Checkbox from '@mui/material/Checkbox';
 import { styled } from "@mui/material/styles";
@@ -8,10 +7,10 @@ import { styled } from "@mui/material/styles";
 
 const CartBadge = styled(Badge)({
     "& .MuiBadge-badge": {
-      top: -7,
-      right: -1,
+        top: 0,
+        right: 2,
     },
-  });
+});
 
 const NotificationPopper = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -26,7 +25,9 @@ const NotificationPopper = () => {
         <Box>
             <IconButton onClick={handleClick}>
                 <CartBadge badgeContent={4} color="secondary" overlap="circular">
-                    <NotificationsIcon fontSize="small" />
+                    <svg width="22" height="22" viewBox="0 0 25 25" fill="rgba(20, 24, 33, 0.75)">
+                        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" />
+                    </svg>
                 </CartBadge>
             </IconButton>
 

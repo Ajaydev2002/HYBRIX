@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ComposedChart, Bar, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { ComposedChart, Bar, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, ReferenceLine } from "recharts";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import oneYearData from '../../consts/oneYearData';
 import sixMonthData from '../../consts/sixMonthData';
@@ -48,7 +48,7 @@ const CustomLegand = () => {
 }
 
 
-const DashboardChart = () => {
+const DashboardChart = ({ isOpen }) => {
 
     const [pieData, setPieData] = useState(oneYearData);
 
@@ -58,9 +58,9 @@ const DashboardChart = () => {
 
     return (
 
-        <div className='dashboard-chart-container'>
+        <div className='dashboard-chart-container' style={{ width: isOpen ? "610px" : "695px", }}>
 
-            <div className="revenue-container">
+            <div className="revenue-container" >
                 <div className="revenue-header">
                     <h6>Revenue</h6>
                     <div className="revenue-header-btn">
@@ -71,20 +71,20 @@ const DashboardChart = () => {
                     </div>
                 </div>
 
-                <div className="orders-details">
-                    <div className="revene-order">
+                <div className="orders-details" >
+                    <div className="revene-order" style={{ width: isOpen ? "150px" : "172px", }}>
                         <h6>7,585</h6>
                         <p>Orders</p>
                     </div>
-                    <div className="revenue-earnings">
+                    <div className="revenue-earnings" style={{ width: isOpen ? "150px" : "172px", }}>
                         <h6>$22.89k</h6>
                         <p>Earnings</p>
                     </div>
-                    <div className="revenue-Refunds">
+                    <div className="revenue-Refunds" style={{ width: isOpen ? "150px" : "172px", }}>
                         <h6>367</h6>
                         <p>Refunds</p>
                     </div>
-                    <div className="revenue-ratio">
+                    <div className="revenue-ratio" style={{ width: isOpen ? "150px" : "172px", }}>
                         <h6>18.92%</h6>
                         <p>Conversation <br />Ratio</p>
                     </div>
@@ -93,21 +93,21 @@ const DashboardChart = () => {
 
             <div className='dashboard-chart'>
 
-                <ResponsiveContainer height={300}>
+                <ResponsiveContainer height={315}>
 
                     <ComposedChart data={pieData}>
 
                         <XAxis dataKey="Month"
                             axisLine={false}
                             tickLine={false}
-                            tick={{ fontSize: 10 }} />
+                            tick={{ fontSize: 13 }} />
 
                         <YAxis axisLine={false}
                             tickLine={false}
                             domain={[0, 100]}
                             ticks={(pieData === oneMonthData || pieData === oneYearData) ? [0.00, 20.00, 40.00, 60.00, 80.00, 100.00] : [0.00, 30.00, 60.00, 90.00, 120.00]}
                             tickFormatter={(value) => value.toFixed(2)}
-                            tick={{ fontSize: 10 }} />
+                            tick={{ fontSize: 11.5 }} />
 
                         <Tooltip content={<CustomTooltip />} />
 
@@ -122,9 +122,18 @@ const DashboardChart = () => {
                             strokeDasharray="7 8"
                             dot={false} />
 
-
                         <Legend content={<CustomLegand />} />
-                        
+
+                        {pieData.map((entry, index) => (
+                            <ReferenceLine
+                                key={index}
+                                x={entry.Month}
+                                stroke="rgba(203, 203, 203, 0.75)"
+                                strokeWidth={1}
+                            />
+                        ))}
+
+
                     </ComposedChart>
                 </ResponsiveContainer>
             </div>

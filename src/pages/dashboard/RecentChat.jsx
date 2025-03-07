@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import reChartProfileDetails from "../../consts/reChartProfileDetails";
 import chatList from "../../consts/chatList";
@@ -8,11 +8,11 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import ShareIcon from '@mui/icons-material/Share';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const RecentChat = () => {
+const RecentChat = ({ isOpen }) => {
 
     const [selectedChatId, setSelectedChatId] = useState(null);
     const [searchText, setSearchText] = useState("");
-    const [filteredChat, setFilteredChat] = useState([]);
+    const [filteredChat, setFilteredChat] = useState(chatList);
     const [menuOpen, setMenuOpen] = useState(false);
 
     const menu = () => setMenuOpen(!menuOpen)
@@ -27,7 +27,7 @@ const RecentChat = () => {
 
     return (
         <div className="recent-chat" >
-            <div className="recent-chat-container">
+            <div className="recent-chat-container" style={{ width: isOpen ? "290px" : "330px" }}>
 
                 <div className="recent-chat-heading">
                     <h5>RECENT CHAT</h5>
@@ -49,13 +49,7 @@ const RecentChat = () => {
 
                 <div className="RC-search-bar">
 
-                    <SearchIcon sx={{ fontSize: 20, marginRight: 1, marginLeft: 3, color: "rgba(89, 91, 96, 0.75)" }} value={searchText}
-                        onChange={(e) => {
-                            setSearchText(e.target.value)
-                            console.log("searchtext value", setSearchText)
-                        }} />
-
-                    <input type="text" placeholder="Start for..." name="search" className="RC-search"
+                    <SearchIcon sx={{ fontSize: 20, marginRight: 1, marginLeft: 3, color: "rgba(89, 91, 96, 0.75)" }} 
                         onClick={() => {
                             const filteredChat = (chatList).filter((chat) =>
                                 chat.name.toLowerCase().includes(searchText.toLowerCase())
@@ -63,12 +57,18 @@ const RecentChat = () => {
                             setFilteredChat(filteredChat)
                         }} />
 
+                    <input type="text" placeholder="Start for..." name="search" className="RC-search" value={searchText}
+                        onChange={(e) => {
+                            setSearchText(e.target.value)
+                            console.log("searchtext value", setSearchText)
+                        }} />
+
                 </div>
 
 
 
                 <div className="list-of-chat" >
-                    {chatList.map((item) => (
+                    {filteredChat.map((item) => (
                         <div className="chat-container" key={item.id} onClick={() => handleProfileClick(item.id)}>
                             <div className="outer-profile">
 
@@ -96,7 +96,7 @@ const RecentChat = () => {
 
                             {selectedChatId === item.id && (
 
-                                <div className="chat-section">
+                                <div className="chat-section" style={{ width: isOpen ? "270px" : "305px" }}>
 
                                     <div className="chat-header">
                                         <div className="chat-header-image-section">
@@ -110,15 +110,15 @@ const RecentChat = () => {
 
                                             <div className="chat-menu-section" style={{ display: menuOpen ? "block" : "none", }}>
                                                 <div className="archive-section">
-                                                    <ArchiveIcon sx={{fontSize: "20px"}}/>
+                                                    <ArchiveIcon sx={{ fontSize: "20px" }} />
                                                     <p>Archive</p>
                                                 </div>
                                                 <div className="share-section">
-                                                   <ShareIcon sx={{fontSize: "20px"}}/>
+                                                    <ShareIcon sx={{ fontSize: "20px" }} />
                                                     <p>Muted</p>
                                                 </div>
                                                 <div className="delete-section">
-                                                    <DeleteIcon sx={{fontSize: "20px"}}/>
+                                                    <DeleteIcon sx={{ fontSize: "20px" }} />
                                                     <p>Delete</p>
                                                 </div>
                                             </div>

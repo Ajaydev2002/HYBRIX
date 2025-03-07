@@ -4,17 +4,17 @@ import locationData from "../../consts/locationPercent";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 
-const SalesLocation = () => {
+const SalesLocation = ({ isOpen }) => {
 
     return (
         <div className="saleslocation">
-            <div className="saleslocation-container">
+            <div className="saleslocation-container" style={{ width: isOpen ? "914px" : "1057px", }}>
 
                 <div className="saleslocation-header">
                     <h5>Top Retail Sales Location</h5>
-                    <button className="export-report-btn">
+                    <p className="export-report-btn">
                         Export Report
-                    </button>
+                    </p>
                 </div>
 
                 <div className="map-userstatistics-container">

@@ -4,7 +4,7 @@ import customerDetails from "../../consts/customerDetails";
 import TablePagination from '@mui/material/TablePagination';
 
 
-const RecentOrders = () => {
+const RecentOrders = ({isOpen}) => {
 
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -20,7 +20,7 @@ const RecentOrders = () => {
 
     return (
         <div className="recent-order">
-            <div className="recent-order-container">
+            <div className="recent-order-container" style={{ width: isOpen ? "915px" : "1057px"}}>
 
                 <div className="recentorder-header">
                     <div className="RO-header-text">

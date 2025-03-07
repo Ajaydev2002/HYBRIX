@@ -1,9 +1,9 @@
 import React from "react";
 
-const Orders = () => {
+const Orders = ({ isOpen }) => {
 
     return (
-        <div className="orders-container">
+        <div className="orders-container" style={{ width: isOpen ? "240px" : "295px", }}>
             <div className="orders-context">
 
                 <div className="cart-icon">

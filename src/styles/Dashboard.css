@@ -22,12 +22,14 @@ body {
 .dashboard-section1 {
     display: flex;
 }
-
+.outlet-container {
+    transition: margin-left 0.5s ease;
+}
+  
 
 
 
 .totalearnings-container {
-    width: 240px;
     border: 1px solid #438eff1a;
     background-color: rgb(255, 255, 255);
     border-radius: 6px;
@@ -76,12 +78,12 @@ body {
 
 
 .orders-container {
-    width: 240px;
     border: 1px solid #438eff1a;
     background-color: rgb(255, 255, 255);
     border-radius: 6px;
     padding: 20px;
     margin-top: 24px;
+    transition: width 0.5s ease-in-out;
 }
 .orders-context {
     display: flex;
@@ -132,12 +134,12 @@ body {
 
 
 .Earning-container {
-    width: 240px;
     border: 1px solid #438eff1a;
     background-color: rgb(255, 255, 255);
     border-radius: 6px;
     padding: 20px;
     margin-top: 24px;
+    transition: width 0.5s ease-in-out;
 }
 .Earning-content {
     display: flex;
@@ -183,8 +185,8 @@ body {
 .D-revenue {
     margin-left: 24px;
 }
-.revenue-container {
-    width: 610px;
+.dashboard-chart-container {
+    transition: width 0.5s ease-in-out;
 }
 .revenue-header {
     display: flex;
@@ -223,12 +225,12 @@ body {
     background-color: #fff;
     color: rgb(133, 97, 249);
 }
+
 .orders-details {
     display: flex;
     flex-flow: wrap;
     text-align: center;
     background-color: rgb(249, 251, 252);
-    width: 610px;
 }
 .revene-order {
     border: 1px solid rgba(67, 142, 255, 0.1);
@@ -302,7 +304,6 @@ body {
 
 
 
-
 .dashboard-chart {
     padding-top: 20px;
     border-bottom: 1px solid #438eff1a;
@@ -359,6 +360,7 @@ body {
     align-items: center;
     text-align: center;
     justify-content: center;
+    padding-top: 15px;
 }
 
 .order-btn {
@@ -410,9 +412,10 @@ body {
 .sales-container {
     margin-top: 24px;
 }
-
 .upgrade-benifits {
-    width: 875px;
+    transition: width 0.3s ease-in-out;
+}
+.upgrade-benifits {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -462,9 +465,8 @@ body {
 .recent-order {
     margin-top: 24px;
 }
-
 .recent-order-container {
-    width: 915px;
+    transition: width 0.3s ease-in-out;
 }
 
 .recentorder-header {
@@ -599,7 +601,7 @@ td {
 }
 
 .best-selling-container {
-    width: 590px;
+    transition: width 0.3s ease-in-out;
 }
 
 .bestselling-header {
@@ -642,8 +644,6 @@ td {
 }
 
 .bestsell-item-div {
-    max-width: 280px;
-    width: 185.667px;
     margin-right: 16px;
 }
 
@@ -705,16 +705,16 @@ td {
 }
 
 .product-delivery-container {
-    width: 300px;
     border: 1px solid rgba(67, 142, 255, 0.1);
     border-radius: 6px;
+    transition: width 0.3s ease-in-out;
 }
 
 .product-delivery-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgba(67, 142, 255, 0.1);
+    border-bottom: 1px solid rgba(67, 142, 255, 0.1);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     padding: 20px;
@@ -828,6 +828,7 @@ td {
     width: 280px;
     border: 1px solid rgba(67, 142, 255, 0.1);
     border-radius: 6px;
+    transition: width 0.3s ease-in-out;
 }
 
 .sales-category-header {
@@ -852,6 +853,7 @@ td {
 .sales-category-dropdown {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .sales-category-dropdown p {
@@ -866,11 +868,11 @@ td {
     top: 60px;
     left: -80px;
     width: 150px;
-    z-index: 1000px;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgba(67, 142, 255, 0.1);
     box-shadow: rgba(149, 149, 149, 0.14) 0px 8px 10px 1px, rgba(149, 149, 149, 0.14) 0px 8px 10px 1px, rgba(149, 149, 149, 0.14) 0px 8px 10px 1px;
     border-radius: 3px;
+    z-index: 1;
 }
 .sales-dropdown p {
     padding-block: 11px;
@@ -961,7 +963,7 @@ td {
 }
 
 .stockreport-container {
-    width: 610px;
+    transition: width 0.3s ease-in-out;
 }
 
 .stockreport-header {
@@ -985,10 +987,15 @@ td {
     background-color: rgb(219, 239, 243);
     padding: 5px;
     border-radius: 4px;
+    color: rgb(74, 176, 193);
+    cursor: pointer;
+}
+.generate-report:hover {
+    background-color: rgb(74, 176, 193);
+    color: #fff;
 }
 
 .generate-report h5 {
-    color: rgb(74, 176, 193);
     padding-left: 6px;
     font-size: 14px;
     font-weight: 500;
@@ -1080,7 +1087,7 @@ td {
 }
 
 .saleslocation-container {
-    width: 914px;
+    transition: width 0.3s ease-in-out;
     border: 1px solid rgba(67, 142, 255, 0.1);
 }
 
@@ -1104,9 +1111,14 @@ td {
     padding: 6px;
     border: none;
     border-radius: 4px;
-    font-weight: 600;
-    letter-spacing: 0.5;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
 }
+.export-report-btn:hover {
+    background-color: rgb(67, 142, 255);
+    color: #fff;
+} 
 
 .map-userstatistics-container {
     display: flex;
@@ -1183,9 +1195,11 @@ td {
 
 
 .footer {
+    position: relative;
     background-color: #fff;
     border: 1px solid rgba(67, 142, 255, 0.1);
     margin-top: 20px;
+    z-index: 100;
 }
 .footer-container {
     display: flex;
@@ -1209,12 +1223,12 @@ td {
 }
 .recent-chat-container {
     position: fixed;
-    right: 24;
-    top: 60;
-    width: 290px;
+    right: 24px;
+    top: 60px;
     height: 92vh;
     overflow-y: auto;
     border: 1px solid rgba(67, 142, 255, 0.1);
+    transition: width 0.3s ease-in-out;
 }
 .recent-chat-container::-webkit-scrollbar {
     width: 5px;
@@ -1384,13 +1398,12 @@ td {
 
 .chat-section {
     position: absolute;
-    top: 60;
+    top: 65;
     right: 24;
     background-color: #fff;
     height: 92vh;
     z-index: 1;
     position: fixed;
-    width: 270px;
     overflow-y: scroll;
     padding-inline: 10px;
 }

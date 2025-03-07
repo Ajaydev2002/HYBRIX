@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import productDeliveryDetails from "../../consts/productDeliveryDetails"
 
-const ProductDelivery = () => {
+const ProductDelivery = ({ isOpen }) => {
 
     const [open, setOpen] = useState(false);
 
@@ -10,7 +10,7 @@ const ProductDelivery = () => {
 
     return (
         <div className="product-delivery">
-            <div className="product-delivery-container">
+            <div className="product-delivery-container" style={{ width: isOpen ? "300px" : "342px", }}>
                 <div className="product-delivery-header">
                     <h5>Product Delivery</h5>
                     

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { IconButton, Popper, Paper, Box } from "@mui/material";
-import WidgetsIcon from "@mui/icons-material/Widgets";
 import github from "../../assets/github.png";
 import bigbucket from "../../assets/bigbucket.png";
 import dribble from "../../assets/dribble.png";
@@ -20,7 +19,9 @@ const WidgetPopper = () => {
   return (
     <Box>
       <IconButton onClick={handleClick}>
-          <WidgetsIcon />
+        <svg width="22" height="22" viewBox="0 0 25 25" fill="rgba(20, 24, 33, 0.75)">
+          <path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z" />
+        </svg>
       </IconButton>
 
       <Popper open={open} anchorEl={anchorEl} placement="bottom-end">
@@ -35,7 +36,7 @@ const WidgetPopper = () => {
 
               <div className="browser-content1">
                 <div className="git">
-                  <img src= {github} />
+                  <img src={github} />
                   <p>Git Hub</p>
                 </div>
                 <div className="bitbucket">

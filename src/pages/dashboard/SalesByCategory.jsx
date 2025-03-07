@@ -4,7 +4,7 @@ import pieData from "../../consts/pieData";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 
-const SalesByCategory = () => {
+const SalesByCategory = ({ isOpen }) => {
 
     const [hoveredPie, setHoveredPie] = useState(null);
     const [salesMenu, setSalesMenu] = useState(false);
@@ -50,7 +50,7 @@ const SalesByCategory = () => {
 
         <div className="sales-by-category">
 
-            <div className="sales-by-category-container">
+            <div className="sales-by-category-container" style={{ width: isOpen ? "280px" : "330px", }}>
 
                 <div className="sales-category-header">
                     <div className="sales-category-header-name">
@@ -79,7 +79,7 @@ const SalesByCategory = () => {
                 </div>
 
                 <div>
-                    <PieChart width={300} height={300} >
+                    <PieChart width={isOpen ? 300 : 320} height={isOpen ? 300 : 320} >
 
                         {pieData.map((entry, index) => (
                             <Pie
@@ -88,8 +88,8 @@ const SalesByCategory = () => {
                                 dataKey="value"
                                 cx="50%"
                                 cy="50%"
-                                innerRadius={55 + index * 10}
-                                outerRadius={60 + index * 10}
+                                innerRadius={isOpen ? (55 + index * 10) : (53.5 + index * 13) }
+                                outerRadius={isOpen ? (60 + index * 10) : (60 + index * 13) }
                                 startAngle={90}
                                 endAngle={-270}
                                 fill="#f0f0f0"
@@ -105,8 +105,8 @@ const SalesByCategory = () => {
                                 nameKey="name"
                                 cx="50%"
                                 cy="50%"
-                                innerRadius={55 + index * 10}
-                                outerRadius={60 + index * 10}
+                                innerRadius={isOpen ? (55 + index * 10) : (53.5 + index * 13) }
+                                outerRadius={isOpen ? (60 + index * 10) : (60 + index * 13) }
                                 startAngle={90}
                                 endAngle={90 - entry.value * 3.6}
                                 fill={hoveredPie && hoveredPie.name === entry.name ? entry.bgcolor : entry.color}

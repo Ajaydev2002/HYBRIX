@@ -23,6 +23,7 @@ const Applayout = () => {
       <div className="outlet-container" style={{ marginLeft: isOpen ? "240px" : "60px", }}>
 
         <Outlet context={{ isOpen }}/>
+        
         <Footer/>
         
       </div>
