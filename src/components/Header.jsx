@@ -48,7 +48,7 @@ const Header = (props) => {
 
 
 
-            <div style={{ marginLeft: isOpen ? "240px" : "60px" }} className="Header-main-content">
+            <div className={`Header-main-content ${isOpen ? "open" : "closed"}`}>
 
                 <div style={{ left: isOpen ? "240px" : "60px" }} className="header-container">
 

@@ -1,12 +1,30 @@
-import React from "react";
-
+import React, {useState, useEffect} from "react";
+    
 const TotalEarning = ({ isOpen }) => {
+
+    const [count, setCount] = useState(40.30);
+    const amount = 194;
+
+    useEffect(() => {
+        let counter = count;
+        const interval = setInterval(() => {
+            setCount((prevCount) => prevCount + 1);
+            counter ++;
+
+            if (counter >= amount ) {
+                clearInterval(interval);
+            }
+        },10)
+
+        return () => clearInterval(interval);
+    }, [])
+
     return (
         <div className="Earning-container" style={{ width: isOpen ? "240px" : "295px", }}>
             <div className="Earning-content">
                 <div className="Earning-balance">
                     <p>TOTAL EARNINGS</p>
-                    <h4>195.38M</h4>
+                    <h4>{count}M</h4>
                 </div>
                 <div className="dollar-icon2">
                     <svg width="24" height="24" fill="rgb(246, 183, 73)" >

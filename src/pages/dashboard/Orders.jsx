@@ -1,6 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 const Orders = ({ isOpen }) => {
+
+    const [count, setCount] = useState(485.36);
+    const amount = 698.36;
+
+    useEffect(() => {
+        let counter = count;
+        const interval = setInterval(() => {
+            setCount((prevCount) => prevCount + 1);
+            counter ++;
+
+            if (counter >= amount) {
+                clearInterval(interval);
+            }
+        },10)
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="orders-container" style={{ width: isOpen ? "240px" : "295px", }}>
@@ -14,7 +31,7 @@ const Orders = ({ isOpen }) => {
 
                 <div className="orders-text">
                     <p>ORDERS</p>
-                    <h4>698.36k</h4>
+                    <h4>{count}k</h4>
                 </div>
             </div>
 

@@ -20,7 +20,7 @@ const Applayout = () => {
 
       <Header isOpen={isOpen} toggle={toggle} />
 
-      <div className="outlet-container" style={{ marginLeft: isOpen ? "240px" : "60px", }}>
+      <div className={`outlet-container ${isOpen ? "open" : "closed"}`}>
 
         <Outlet context={{ isOpen }}/>
         

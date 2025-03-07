@@ -34,6 +34,12 @@ body {
 .Header-main-content {
     transition: all 0.5s;
 }
+.Header-main-content.open {
+    margin-left: 240px;
+}
+.Header-main-contentr.closed {
+    margin-left: 60px;
+}
 
 .header-container {
     display: flex;

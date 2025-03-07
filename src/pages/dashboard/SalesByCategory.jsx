@@ -67,7 +67,6 @@ const SalesByCategory = ({ isOpen }) => {
                                     <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
                                 </svg>
                             </div>
-
                         </div>
 
                         <div className="sales-dropdown" style={{ display: salesMenu ? "block" : "none", }} >
@@ -96,7 +95,7 @@ const SalesByCategory = ({ isOpen }) => {
                                 stroke="none"
                             />
                         ))}
-
+    
                         {pieData.map((entry, index) => (
                             <Pie
                                 key={index}
