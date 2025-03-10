@@ -24,7 +24,7 @@ const BestSelling = ({ isOpen }) => {
 
     return (
         <div className="best-selling">
-            <div className="best-selling-container" style={{ width: isOpen ? "590px" : "690px", }}>
+            <div className={`best-selling-container ${isOpen ? "open" : "closed"}`}>
 
                 <div className="bestselling-header">
 
@@ -44,12 +44,12 @@ const BestSelling = ({ isOpen }) => {
 
                     {visibleItems.map((item, index) => (
 
-                        <div className="bestsell-item-div" key={index}  style={{ width: isOpen ? "185.667px" : "220px", }}>
+                        <div className={`bestsell-item-div ${isOpen ? "open" : "closed"}`} key={index}>
 
                             <div className="bestselling-item" >
 
                                 <div className="bestselling-image-container">
-                                    <img src={item.img} className="bestsell-image" style={{ width: isOpen ? "150px" : "175px", }}/>
+                                    <img src={item.img} className={`bestsell-image ${isOpen ? "open" : "closed"}`}/>
                                 </div>
 
                                 <div className="bestsell-details">

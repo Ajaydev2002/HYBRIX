@@ -29,27 +29,27 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 }
 
-const CustomLegand = ({setHoveredButton}) => {
+const CustomLegand = ({ setHoveredButton }) => {
 
     return (
         <div className='legand-context'>
-            <button className='order-btn' 
-            onMouseEnter={() => setHoveredButton("Orders")}
-            onMouseLeave={() => setHoveredButton(null)} >
+            <button className='order-btn'
+                onMouseEnter={() => setHoveredButton("Orders")}
+                onMouseLeave={() => setHoveredButton(null)} >
                 <FiberManualRecordIcon sx={{ color: "#eff2f7", fontSize: "14px", paddingRight: "5px" }} />
                 <p> Orders </p>
             </button>
 
-            <button className='earning-btn' 
-            onMouseEnter={() => setHoveredButton("Earnings")}
-            onMouseLeave={() => setHoveredButton(null)}>
+            <button className='earning-btn'
+                onMouseEnter={() => setHoveredButton("Earnings")}
+                onMouseLeave={() => setHoveredButton(null)}>
                 <FiberManualRecordIcon sx={{ color: "#438eff", fontSize: "14px", paddingRight: "5px" }} />
                 <p> Earnings </p>
             </button>
 
             <button className='refund-btn'
-            onMouseEnter={() => setHoveredButton("Refund")}
-            onMouseLeave={() => setHoveredButton(null)}>
+                onMouseEnter={() => setHoveredButton("Refund")}
+                onMouseLeave={() => setHoveredButton(null)}>
                 <FiberManualRecordIcon sx={{ color: "#8561f9", fontSize: "14px", paddingRight: "5px" }} />
                 <p> Refunds</p>
             </button>
@@ -70,7 +70,7 @@ const DashboardChart = ({ isOpen }) => {
 
     return (
 
-        <div className='dashboard-chart-container' style={{ width: isOpen ? "610px" : "695px", }}>
+        <div className={`dashboard-chart-container ${isOpen ? "open" : "closed"}`}>
 
             <div className="revenue-container" >
                 <div className="revenue-header">
@@ -93,7 +93,7 @@ const DashboardChart = ({ isOpen }) => {
                             className={activeButton === "6M" ? "active" : ""}
                         >6M
                         </button>
-                        
+
                         <button
                             onClick={() => { handleButtonClick("1Y", oneYearData) }}
                             className={activeButton === "1Y" ? "active" : ""}
@@ -103,37 +103,42 @@ const DashboardChart = ({ isOpen }) => {
                 </div>
 
                 <div className="orders-details" >
-                    <div className="revene-order" style={{ width: isOpen ? "150px" : "172px", }}>
-                        <h6><AnimatedCounter
-                        initial={6999}
-                        target={7585}
-                        intervaltime={1}
-                        /></h6>
-                        <p>Orders</p>
+                    <div className='orders-details-section-1'>
+                        <div className="revene-order" >
+                            <h6><AnimatedCounter
+                                initial={6999}
+                                target={7585}
+                                intervaltime={1}
+                            /></h6>
+                            <p>Orders</p>
+                        </div>
+                        <div className="revenue-earnings" >
+                            <h6>$<AnimatedCounter
+                                initial={0}
+                                target={22}
+                                intervaltime={100}
+                            />k</h6>
+                            <p>Earnings</p>
+                        </div>
                     </div>
-                    <div className="revenue-earnings" style={{ width: isOpen ? "150px" : "172px", }}>
-                        <h6>$<AnimatedCounter
-                        initial={0}
-                        target={22}
-                        intervaltime={100}
-                        />k</h6>
-                        <p>Earnings</p>
-                    </div>
-                    <div className="revenue-Refunds" style={{ width: isOpen ? "150px" : "172px", }}>
-                        <h6><AnimatedCounter
-                        initial={159}
-                        target={367}
-                        intervaltime={10}
-                        /></h6>
-                        <p>Refunds</p>
-                    </div>
-                    <div className="revenue-ratio" style={{ width: isOpen ? "150px" : "172px", }}>
-                        <h6><AnimatedCounter
-                        initial={0}
-                        target={18.92}
-                        intervaltime={100}
-                        />%</h6>
-                        <p>Conversation <br />Ratio</p>
+
+                    <div className='orders-details-section-2'>
+                        <div className="revenue-Refunds" >
+                            <h6><AnimatedCounter
+                                initial={159}
+                                target={367}
+                                intervaltime={10}
+                            /></h6>
+                            <p>Refunds</p>
+                        </div>
+                        <div className="revenue-ratio" >
+                            <h6><AnimatedCounter
+                                initial={0}
+                                target={18.92}
+                                intervaltime={100}
+                            />%</h6>
+                            <p>Conversation <br />Ratio</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -168,10 +173,10 @@ const DashboardChart = ({ isOpen }) => {
                         ))}
 
                         <Bar dataKey="Earnings"
-                            fill={hoveredButton === "Refund"|| hoveredButton === "Orders" ? "#ddebff" : "#438eff"}
+                            fill={hoveredButton === "Refund" || hoveredButton === "Orders" ? "#ddebff" : "#438eff"}
                             radius={[40, 1, 40, 1]}
                             barSize={9}
-                             />
+                        />
 
                         <Line type="linear"
                             dataKey="Refunds"
@@ -180,7 +185,7 @@ const DashboardChart = ({ isOpen }) => {
                             strokeDasharray="7 8"
                             dot={false} />
 
-                        <Legend content={<CustomLegand setHoveredButton={setHoveredButton}/>} />
+                        <Legend content={<CustomLegand setHoveredButton={setHoveredButton} />} />
 
                     </ComposedChart>
                 </ResponsiveContainer>

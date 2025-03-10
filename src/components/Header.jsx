@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -13,12 +13,19 @@ import logo from "../assets/logo.png";
 
 const Header = (props) => {
 
-    const { isOpen ,toggle} = props
+    const { isOpen, toggle } = props;
+
+    const [OpenSidebar, setOpenSidebar] = useState(false);
+
+    const clickHandle = () => setOpenSidebar(!OpenSidebar);
 
     return (
         <div className="container">
 
-            <div style={{ width: isOpen ? "240px" : "60px" }} className="sidebar">
+            <div
+                style={{ width: isOpen ? "240px" : "60px" }}
+                className={`sidebar ${OpenSidebar ? "sidebar-open" : "sidebar-closed"}`}
+            >
 
                 <div className="logo-section" style={{ width: isOpen ? "240px" : "60px" }}>
                     <img src="https://themes.themesbrand.com/hybrix/react-material/light/static/media/logo-dark.00f35cb27393e7e7b073.png" alt="MUI logo" style={{ width: '100px', display: isOpen ? "block" : "none" }} />
@@ -48,15 +55,19 @@ const Header = (props) => {
 
 
 
-            <div className={`Header-main-content ${isOpen ? "open" : "closed"}`}>
+            <div className={`Header-main-content ${isOpen ? "open" : "closed"}`} >
 
-                <div style={{ left: isOpen ? "240px" : "60px" }} className="header-container">
+                <div className={`header-container ${isOpen ? "open" : "closed"}`} >
 
                     <div className="search-container">
 
                         <div className="menu-bar" onClick={toggle}>
-                            <MenuIcon style={{ display: isOpen ? "block" : "none" }} />
-                            <NavigateNextIcon style={{ display: isOpen ? "none" : "block" }} />
+                            <MenuIcon className={`Menuicon ${isOpen ? "open" : "closed"}`} />
+                            <NavigateNextIcon className={`Navigationicon ${isOpen ? "open" : "closed"}`} />
+                        </div>
+
+                        <div className="tabel-nav-btn" onClick={clickHandle}>
+                            <NavigateNextIcon className={`nav-open ${OpenSidebar ? "open" : "closed"}`} />
                         </div>
 
                         <SearchIcon sx={{ fontSize: 20, marginRight: 1, marginLeft: 3 }} />

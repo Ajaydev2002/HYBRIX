@@ -4,7 +4,7 @@ import stockReportDetails from "../../consts/stockReportDetails";
 const StockReport = ({ isOpen }) => {
     return (
         <div className="stockreport">
-            <div className="stockreport-container" style={{ width: isOpen ? "610px" : "703px", }}>
+            <div className={`stockreport-container ${isOpen ? "open" : "closed"}`}>
 
                 <div className="stockreport-header">
                     <div className="stockreport-heading">

@@ -34,7 +34,7 @@ const Dashboard = () => {
                             <DashboardChart isOpen={isOpen}/>
                         </div>
                     </div>
-                    <div>
+                    <div className="RO-MS-container">
                         <MoreSales isOpen={isOpen}/>
                         <RecentOrders isOpen={isOpen}/>
                     </div>

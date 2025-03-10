@@ -14,7 +14,18 @@ const RecentChat = ({ isOpen }) => {
     const [searchText, setSearchText] = useState("");
     const [filteredChat, setFilteredChat] = useState(chatList);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [message, setMessage] = useState("");
 
+    const handleInputChange = (event) => {
+        setMessage(event.target.value);
+    }
+
+    const sendMessage = () => {
+        if (message.trim() !== "") {
+            console.log("message sent:", message);
+            setMessage("");
+        }
+    }
     const menu = () => setMenuOpen(!menuOpen)
 
     const handleProfileClick = (id) => {
@@ -27,7 +38,7 @@ const RecentChat = ({ isOpen }) => {
 
     return (
         <div className="recent-chat" >
-            <div className="recent-chat-container" style={{ width: isOpen ? "290px" : "330px" }}>
+            <div className={`recent-chat-container ${isOpen ? "open" : "closed"}`}>
 
                 <div className="recent-chat-heading">
                     <h5>RECENT CHAT</h5>
@@ -66,7 +77,6 @@ const RecentChat = ({ isOpen }) => {
                 </div>
 
 
-
                 <div className="list-of-chat" >
                     {filteredChat.map((item) => (
                         <div className="chat-container" key={item.id} onClick={() => handleProfileClick(item.id)}>
@@ -96,7 +106,7 @@ const RecentChat = ({ isOpen }) => {
 
                             {selectedChatId === item.id && (
 
-                                <div className="chat-section" style={{ width: isOpen ? "270px" : "305px" }}>
+                                <div className={`chat-section ${isOpen ? "open" : "closed"}`}>
 
                                     <div className="chat-header">
                                         <div className="chat-header-image-section">
@@ -132,7 +142,7 @@ const RecentChat = ({ isOpen }) => {
 
                                     {item.chats.map((msg) => (
                                         <div>
-                                            <div className="chat-detail1">
+                                             <div key={msg.id} className={`chat-detail1 ${msg.sender === "You" ? "msg-send-container" : "msg-received-container"}`}>
 
                                                 {msg.sender !== "You" && (
                                                     <div className="chat-sender-image-container">
@@ -168,10 +178,10 @@ const RecentChat = ({ isOpen }) => {
                                     <div className="send-message-container">
 
                                         <div className="send-message-imput-section">
-                                            <input type="text" placeholder="Enter Message..." name="search" className="send-chat" />
+                                            <input type="text" placeholder="Enter Message..." name="search" className="send-chat" value={message} onChange={handleInputChange} />
                                         </div>
 
-                                        <div className="message-send-btn">
+                                        <div className="message-send-btn" onClick={sendMessage}>
                                             <svg width="20" height="15" viewBox="0 0 20 20" fill="#fff" >
                                                 <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" />
                                             </svg>

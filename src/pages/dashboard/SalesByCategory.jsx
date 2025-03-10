@@ -50,9 +50,10 @@ const SalesByCategory = ({ isOpen }) => {
 
         <div className="sales-by-category">
 
-            <div className="sales-by-category-container" style={{ width: isOpen ? "280px" : "330px", }}>
+            <div className={`sales-by-category-container ${isOpen ? "open" : "closed"}`}>
 
                 <div className="sales-category-header">
+                    
                     <div className="sales-category-header-name">
                         <h5>Sales by Category</h5>
                     </div>

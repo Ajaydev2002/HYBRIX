@@ -8,7 +8,7 @@ const SalesLocation = ({ isOpen }) => {
 
     return (
         <div className="saleslocation">
-            <div className="saleslocation-container" style={{ width: isOpen ? "914px" : "1057px", }}>
+            <div className={`saleslocation-container ${isOpen ? "open" : "closed"}`}>
 
                 <div className="saleslocation-header">
                     <h5>Top Retail Sales Location</h5>
@@ -48,13 +48,14 @@ const SalesLocation = ({ isOpen }) => {
                                         <div className="country-color">
                                             <FiberManualRecordIcon sx={{ color: item.color, fontSize: "22px", paddingRight: "15px" }} />
                                         </div>
+
                                         <div className="country-name">
                                             {item.name}
                                         </div>
+                                        
                                         <div className="country-percent">
                                             {item.percentage}%
                                         </div>
-
                                     </div>
                                 ))}
                             </div>

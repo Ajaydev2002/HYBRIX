@@ -42,6 +42,12 @@ body {
     border-radius: 6px;
     padding: 20px;
 }
+.totalearnings-container.open {
+    width: 240px;
+}
+.totalearnings-container.closed {
+    width: 295px;
+}
 .balance-content {
     display: flex;
     justify-content: space-between;
@@ -83,7 +89,6 @@ body {
 
 
 
-
 .orders-container {
     border: 1px solid #438eff1a;
     background-color: rgb(255, 255, 255);
@@ -91,6 +96,12 @@ body {
     padding: 20px;
     margin-top: 24px;
     transition: width 0.5s ease-in-out;
+}
+.orders-container.open {
+    width: 240px;
+}
+.orders-container.closed {
+    width: 295px;
 }
 .orders-context {
     display: flex;
@@ -148,6 +159,12 @@ body {
     margin-top: 24px;
     transition: width 0.5s ease-in-out;
 }
+.Earning-container.open {
+    width: 240px;
+}
+.Earning-container.closed {
+    width: 295px;
+}
 .Earning-content {
     display: flex;
     justify-content: space-between;
@@ -191,6 +208,12 @@ body {
 
 .D-revenue {
     margin-left: 24px;
+}
+.dashboard-chart-container.open {
+    width: 610px;
+}
+.dashboard-chart-container.closed {
+    width: 695px;
 }
 .dashboard-chart-container {
     transition: width 0.5s ease-in-out;
@@ -239,13 +262,20 @@ body {
 
 .orders-details {
     display: flex;
-    flex-flow: wrap;
     text-align: center;
     background-color: rgb(249, 251, 252);
 }
+.orders-details-section-1 {
+    display: flex;
+    width: 50%;
+}
+.orders-details-section-2 {
+    display: flex;
+    width: 50%;
+}
 .revene-order {
     border: 1px solid rgba(67, 142, 255, 0.1);
-    width: 150px;
+    width: 50%;
     padding-block: 16px;
 }
 .revene-order h6 {
@@ -261,7 +291,7 @@ body {
 }
 .revenue-earnings {
     border: 1px solid rgba(67, 142, 255, 0.1);
-    width: 150px;
+    width: 50%;
     padding-block: 16px;
 }
 
@@ -280,7 +310,7 @@ body {
 
 .revenue-Refunds {
     border: 1px solid rgba(67, 142, 255, 0.1);
-    width: 150px;
+    width: 50%;
     padding-block: 16px;
 }
 .revenue-Refunds h6 {
@@ -296,7 +326,7 @@ body {
 }
 .revenue-ratio {
     border: 1px solid rgba(67, 142, 255, 0.1);
-    width: 150px;
+    width: 50%;
     padding-block: 16px;
 }
 .revenue-ratio h6 {
@@ -423,6 +453,12 @@ body {
 .sales-container {
     margin-top: 24px;
 }
+.upgrade-benifits.open {
+    width: 875px;
+}
+.upgrade-benifits.closed {
+    width: 1017px;
+}
 .upgrade-benifits {
     transition: width 0.3s ease-in-out;
 }
@@ -475,6 +511,12 @@ body {
 .recent-order {
     margin-top: 24px;
 }
+.recent-order-container.open {
+    width: 915px;
+}
+.recent-order-container.closed {
+    width: 1057px;
+}
 .recent-order-container {
     transition: width 0.3s ease-in-out;
 }
@@ -490,32 +532,51 @@ body {
     font-size: 16px;
     font-weight: 500;
 }
-
-
-.dropdown-container label {
-    color: rgba(20, 24, 33, 0.75);
-    font-size: 12px;
+.RO-header-dropdown {
+    display: flex;
+    align-items: center;
 }
-.dropdown-container select {
-    font-size: 14px; 
-    width: 100px; 
-    color: rgba(20, 24, 33, 0.75);
+.RC-input-container  {
+    position: relative;
+}
+.RC-dropdown-selection {
+    display: flex;
+    align-items: center;
+}
+.RC-dropdown-selection input {
     border: none;
     outline: none;
+    width: 75px;
 }
-.dropdown-container option {
-    width: 200px; 
+.RC-dropdown {
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    width: 150px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(67, 142, 255, 0.1);
+    box-shadow: rgba(149, 149, 149, 0.14) 0px 8px 10px 1px, rgba(149, 149, 149, 0.14) 0px 8px 10px 1px, rgba(149, 149, 149, 0.14) 0px 8px 10px 1px;
+    border-radius: 3px;
+    z-index: 1;
+    cursor: pointer;
+}
+.RC-dropdown p {
+    font-weight: 400;
+    padding: 5px 10px;
+    white-space: nowrap;
     font-size: 14px;
-    color: rgba(20, 24, 33, 0.75);
-    border: none;
-    outline: none;
-    text-decoration: none;
-    padding-inline: 40px;
 }
-.dropdown-container option:hover {
+.RC-dropdown p:hover {
     background-color: #f0f0f0;
-    color: #333; 
 }
+.Dropdown-open {
+    display: block;
+}
+.Dropdown-close {
+    display: none ;
+}
+
+
 
 
 .customer-details-container {
@@ -534,6 +595,7 @@ th {
 td {
     text-align: left;
     padding: 12px;
+    font-size: 14px;
 }
 
 .customer-details-header {
@@ -609,7 +671,12 @@ td {
 .best-selling {
     margin-top: 24px;
 }
-
+.best-selling-container.open {
+    width: 590px;
+}
+.best-selling-container.closed {
+    width: 690px;
+}
 .best-selling-container {
     transition: width 0.3s ease-in-out;
 }
@@ -656,6 +723,12 @@ td {
 .bestsell-item-div {
     margin-right: 16px;
 }
+.bestsell-item-div.open {
+    width: 185.667px;
+}
+.bestsell-item-div.closed {
+    width: 220px;
+}
 
 .bestselling-item {
     padding: 20px;
@@ -668,10 +741,13 @@ td {
     border-radius: 5px;
 }
 
-.bestsell-image {
+
+.bestsell-image.open {
     width: 150px;
 }
-
+.bestsell-image.closed {
+    width: 175px;
+}
 .bestsell-details {
     padding-top: 16px;
 }
@@ -719,6 +795,12 @@ td {
     border-radius: 6px;
     transition: width 0.3s ease-in-out;
 }
+.product-delivery-container.open {
+    width: 300px;
+}
+.product-delivery-container.closed {
+    width: 342px;
+}
 
 .product-delivery-header {
     display: flex;
@@ -745,6 +827,9 @@ td {
     cursor: pointer;
 }
 
+.product-container {
+    display: flex;
+}
 .product-items-container {
     height: 320px;
     overflow-y: auto;
@@ -833,9 +918,17 @@ td {
 .sales-by-category {
     margin-top: 24px;
 }
+.sales-by-category-container.open {
+    width: 280px;
+}
+.sales-by-category-container.closed {
+    width: 330px;
+}
 
 .sales-by-category-container {
-    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid rgba(67, 142, 255, 0.1);
     border-radius: 6px;
     transition: width 0.3s ease-in-out;
@@ -846,8 +939,7 @@ td {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgba(67, 142, 255, 0.1);
-    padding-inline: 20px;
-    padding-block: 15px;
+    padding: 20px;
 }
 
 .sales-category-header-name h5 {
@@ -893,6 +985,18 @@ td {
 .sales-dropdown p:hover {
    background-color: #f0f0f0;
 }
+
+
+.pie-chart-container.open {
+    width: 300px;
+    height: 300px;
+}
+  
+.pie-chart-container.closed {
+    width: 320px;
+    height: 320px;
+}
+  
 
 
 .pielegand-container {
@@ -975,7 +1079,12 @@ td {
 .stockreport-container {
     transition: width 0.3s ease-in-out;
 }
-
+.stockreport-container.open {
+    width: 610px;
+}
+.stockreport-container.closed {
+    width: 703px;
+}
 .stockreport-header {
     display: flex;
     align-items: center;
@@ -1099,6 +1208,12 @@ td {
 .saleslocation-container {
     transition: width 0.3s ease-in-out;
     border: 1px solid rgba(67, 142, 255, 0.1);
+}
+.saleslocation-container.open {
+    width: 914px;
+}
+.saleslocation-container.closed {
+    width: 1057px;
 }
 
 .saleslocation-header {
@@ -1240,6 +1355,12 @@ td {
     border: 1px solid rgba(67, 142, 255, 0.1);
     transition: width 0.3s ease-in-out;
 }
+.recent-chat-container.open {
+    width: 290px;
+}
+.recent-chat-container.closed {
+    width: 330px;
+}
 .recent-chat-container::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -1266,7 +1387,6 @@ td {
 }
 .chat-profile {
     display: flex;
-    justify-content: space-between;
     gap: 15px;
     padding-left: 20px;
     overflow-x: scroll;
@@ -1417,6 +1537,12 @@ td {
     overflow-y: scroll;
     padding-inline: 10px;
 }
+.chat-section.open {
+    width: 270px;
+}
+.chat-section.closed {
+    width: 305px;
+}
 .chat-section::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -1527,6 +1653,7 @@ td {
 
 .chat-detail1 {
     display: flex;
+    align-items: center;
     padding-block: 10px;
 }   
 .msg-received {
@@ -1555,6 +1682,16 @@ td {
 .msg {
     cursor: pointer;
 }
+.chat-sender-msg1 {
+    display: flex;
+    flex-direction: column;
+}
+.chat-detail1.msg-received-container {
+    justify-content: flex-start;
+}
+.chat-detail1.msg-send-container {
+    justify-content: flex-end;
+}
 .chat-sender-msg1 p {
     font-size: 12px;
     margin-top: 12px;
@@ -1568,7 +1705,6 @@ td {
     text-align: right;
     font-size: 12px;
     display: flex;
-    -webkit-box-pack: end;
     justify-content: end;
 }
 
@@ -1610,39 +1746,172 @@ td {
 
 
 @media (max-width : 920px) {
-    .sidebar {
-        display: none;
-    }
-    .outlet-container.open {
-        margin-left: 0px;
-    }
-    .outlet-container.closed {
-        margin-left: 0px;
+
+    .dashboard {
+        margin-inline: 24px;
     }
     .dashboard-section1 {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
     .product-selling {
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+    .RO-MS-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .sales-stock {
         display: flex;
         flex-direction: column;
-    }
-    .map-userstatistics-container {
-        display: flex;
-        flex-direction: column;
+        align-items: center;
     }
     .dashboard-content {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     .recent-chat-container {
         position: static;
     }
     .Header-main-content {
         margin-left: 0;
+    }
+
+
+
+
+
+    .outlet-container.open {
+        margin-left: 0px;
+    }
+    .outlet-container.closed {
+        margin-left: 0px;
+    }
+    .totalearnings-container.open {
+        width: 88vw;
+    }
+    .Menuicon {
+        display: none;
+    }
+    .orders-container.open {
+        width: 88vw;
+    }
+    .Earning-container.open {
+        width: 88vw;
+    }
+
+
+    .D-revenue {
+        margin-top: 24px;
+        margin-left: 0px;
+    }
+    .orders-details {
+        display: flex;
+        flex-direction: column;
+    }
+    .orders-details-section-1 {
+        display: flex;
+        width: 100%;
+    }
+    .orders-details-section-2 {
+        display: flex;
+        width: 100%;
+    }
+
+    .dashboard-chart-container.open {
+        width: 93vw;
+    } 
+
+    .upgrade-benifits.open {
+        width: 89vw;
+    } 
+
+    .recent-order-container.open {
+        width: 93vw;
+    } 
+    .best-selling-container.open {
+        width: 90vw;
+    } 
+    .bestsell-item-div.open {
+        width: 21.5vh;
+    }
+    .bestsell-image.open {
+        width: 18vh;
+    }
+
+
+    .product-delivery {
+        margin-left: 0px;
+    }
+    .product-delivery-container.open {
+        width: 70vh;
+    }
+    .product-delivery-details {
+        width: 88vw;
+        justify-content: space-between;
+    }
+    .product-items-container {
+       width: 100%;
+    }
+
+
+
+    .sales-by-category-container.open {
+        width: 93vw;
+    }
+    .sales-category-header {
+        width: 100%;
+    }
+    .pielegand-container {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+
+    .stockreport {
+        margin-left: 0px;
+    }
+    .stockreport-container.open {
+        width: 92vw;
+    }
+
+    .saleslocation-container.open {
+        width: 93vw;
+    }
+    .map-userstatistics-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .statistics-detail-container {
+        margin-left: 0px;
+        margin-top: 24px;
+        margin-right: 0px;
+        width: 90vw;
+    }
+
+
+    .recent-chat {
+        margin-left: 0px;
+    }
+    .recent-chat-container.open {
+        width: 92vw;
+    }
+    .chat-profile {
+        gap: 25px;
+    }
+    .chat-section {
+        left: 24;
+        height: 100%;
+    }
+    .chat-section.open {
+        width: 93vw;
     }
 }

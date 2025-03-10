@@ -3,7 +3,7 @@ import React from "react";
 const MoreSales = ({ isOpen }) => {
     return (
         <div className="sales-container">
-            <div className="upgrade-benifits" style={{ width: isOpen ? "875px" : "1017px", }}>
+            <div className={`upgrade-benifits ${isOpen ? "open" : "closed"}`}>
                 
                 <div className="upgrade-text">
                     <h4>Need More Sales?</h4>

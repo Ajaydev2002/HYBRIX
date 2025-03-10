@@ -21,7 +21,7 @@ const TotalEarnings = ({ isOpen }) => {
     }, [])
 
     return (
-        <div className="totalearnings-container" style={{ width: isOpen ? "240px" : "295px", }}>
+        <div className={`totalearnings-container ${isOpen ? "open" : "closed"}`}>
 
             <div className="balance-content">
                 <div className="available-balance">

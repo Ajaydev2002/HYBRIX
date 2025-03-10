@@ -2,17 +2,28 @@ import React, { useState } from "react";
 import DropdownMenu from "../../consts/DropdownMenu";
 import customerDetails from "../../consts/customerDetails";
 import TablePagination from '@mui/material/TablePagination';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
-const RecentOrders = ({isOpen}) => {
+const RecentOrders = ({ isOpen }) => {
 
     const [page, setPage] = useState(0);
+    const [dropdown, setDropdown] = useState(false);
     const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [selectedValues, setSelectedValues] = useState();
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
 
+    const toggleDropdown = () => {
+        setDropdown(!dropdown);
+    }
+
+    const handleSelect = () => {
+        setSelectedValues(event.target.textContent);
+        setDropdown(false);
+    }
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
@@ -20,14 +31,35 @@ const RecentOrders = ({isOpen}) => {
 
     return (
         <div className="recent-order">
-            <div className="recent-order-container" style={{ width: isOpen ? "915px" : "1057px"}}>
+            <div className={`recent-order-container ${isOpen ? "open" : "closed"}`}>
 
                 <div className="recentorder-header">
                     <div className="RO-header-text">
                         <p>Recent Orders</p>
                     </div>
                     <div className="RO-header-dropdown">
-                        <DropdownMenu />
+                        <div className="sort-by">
+                            <h5>SORT BY :</h5>
+                        </div>
+                        <div className="RC-input-container">
+                            <div className="RC-dropdown-selection" onClick={toggleDropdown} >
+                                <div>
+                                    <input type="text" placeholder="Select day " value={selectedValues} readOnly />
+                                </div>
+                                <div>
+                                    <ExpandMoreIcon sx={{ fontSize: "16px", marginTop: "5px"}} />
+                                </div>
+                            </div>
+                            <div className={`RC-dropdown ${dropdown ? "Dropdown-open" : "Dropdown-close"}`}>
+                                <p onClick={handleSelect}>Today</p>
+                                <p onClick={handleSelect}>Yesterday</p>
+                                <p onClick={handleSelect}>Last 7 days</p>
+                                <p onClick={handleSelect}>Last 30 days</p>
+                                <p onClick={handleSelect}>This Month</p>
+                                <p onClick={handleSelect}>Last Month</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -68,6 +100,7 @@ const RecentOrders = ({isOpen}) => {
                                 ))
                             }
                         </tbody>
+
                     </table>
                 </div>
 

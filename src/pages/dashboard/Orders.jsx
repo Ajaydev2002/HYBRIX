@@ -20,7 +20,7 @@ const Orders = ({ isOpen }) => {
     }, []);
 
     return (
-        <div className="orders-container" style={{ width: isOpen ? "240px" : "295px", }}>
+        <div className={`orders-container ${isOpen ? "open" : "closed"}`} >
             <div className="orders-context">
 
                 <div className="cart-icon">
