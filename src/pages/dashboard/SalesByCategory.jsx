@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PieChart, Pie, Cell, Legend } from "recharts";
+import { PieChart, Pie, Legend } from "recharts";
 import pieData from "../../consts/pieData";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
@@ -9,6 +9,10 @@ const SalesByCategory = ({ isOpen }) => {
     const [hoveredPie, setHoveredPie] = useState(null);
     const [salesMenu, setSalesMenu] = useState(false);
 
+    const handleSelect = () => {
+        setSalesMenu(false);
+    }
+
     const salesDropdown = () => setSalesMenu(!salesMenu)
 
     const handleMouseEnter = (data) => setHoveredPie(data);
@@ -16,11 +20,11 @@ const SalesByCategory = ({ isOpen }) => {
     const handleMouseLeave = () => setHoveredPie(null);
 
     const totalValue = pieData.reduce((acc, item) => acc + item.value, 0);
-
+    
 
     const CustomLegand = () => {
         return (
-            
+
             <div className="pielegand-container">
                 <div className='pielegand-context1'>
                     <button className='fashion-btn'>
@@ -31,12 +35,12 @@ const SalesByCategory = ({ isOpen }) => {
                         <FiberManualRecordIcon sx={{ color: "#4ab0c1", fontSize: "18px", paddingRight: "7px" }} />
                         <p> Electronics </p>
                     </button>
-                </div>
-                <div className='pielegand-context2'>
                     <button className='groceries-btn'>
-                        <FiberManualRecordIcon sx={{ color: "#4ab0c1", fontSize: "18px", paddingRight: "7px" }} />
+                        <FiberManualRecordIcon sx={{ color: "#2dcb73", fontSize: "18px", paddingRight: "7px" }} />
                         <p> Groceries</p>
                     </button>
+                </div>
+                <div className='pielegand-context2'>
                     <button className='others-btn'>
                         <FiberManualRecordIcon sx={{ color: "#8561f9", fontSize: "18px", paddingRight: "7px" }} />
                         <p> Others</p>
@@ -53,14 +57,14 @@ const SalesByCategory = ({ isOpen }) => {
             <div className={`sales-by-category-container ${isOpen ? "open" : "closed"}`}>
 
                 <div className="sales-category-header">
-                    
+
                     <div className="sales-category-header-name">
                         <h5>Sales by Category</h5>
                     </div>
 
                     <div className="sales-category-dropdown-container" >
 
-                        <div className="sales-category-dropdown"  onClick={salesDropdown}>
+                        <div className="sales-category-dropdown" onClick={salesDropdown}>
 
                             <div><p>Report</p></div>
                             <div className="dropdown-icon-containeer">
@@ -71,9 +75,9 @@ const SalesByCategory = ({ isOpen }) => {
                         </div>
 
                         <div className="sales-dropdown" style={{ display: salesMenu ? "block" : "none", }} >
-                            <p>Download Report</p>
-                            <p>Export</p>
-                            <p>Import</p>
+                            <p onClick={handleSelect}>Download Report</p>
+                            <p onClick={handleSelect}>Export</p>
+                            <p onClick={handleSelect}>Import</p>
                         </div>
                     </div>
                 </div>
@@ -88,15 +92,15 @@ const SalesByCategory = ({ isOpen }) => {
                                 dataKey="value"
                                 cx="50%"
                                 cy="50%"
-                                innerRadius={isOpen ? (55 + index * 10) : (53.5 + index * 13) }
-                                outerRadius={isOpen ? (60 + index * 10) : (60 + index * 13) }
+                                innerRadius={isOpen ? (55 + index * 10) : (53.5 + index * 13)}
+                                outerRadius={isOpen ? (60 + index * 10) : (60 + index * 13)}
                                 startAngle={90}
                                 endAngle={-270}
                                 fill="#f0f0f0"
                                 stroke="none"
                             />
                         ))}
-    
+
                         {pieData.map((entry, index) => (
                             <Pie
                                 key={index}
@@ -105,8 +109,8 @@ const SalesByCategory = ({ isOpen }) => {
                                 nameKey="name"
                                 cx="50%"
                                 cy="50%"
-                                innerRadius={isOpen ? (55 + index * 10) : (53.5 + index * 13) }
-                                outerRadius={isOpen ? (60 + index * 10) : (60 + index * 13) }
+                                innerRadius={isOpen ? (55 + index * 10) : (53.5 + index * 13)}
+                                outerRadius={isOpen ? (60 + index * 10) : (60 + index * 13)}
                                 startAngle={90}
                                 endAngle={90 - entry.value * 3.6}
                                 fill={hoveredPie && hoveredPie.name === entry.name ? entry.bgcolor : entry.color}

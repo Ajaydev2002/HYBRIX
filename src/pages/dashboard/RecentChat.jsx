@@ -139,7 +139,8 @@ const RecentChat = ({ isOpen }) => {
                                             }} />
                                         </div>
                                     </div>
-
+                                    
+                                    
                                     {item.chats.map((msg) => (
                                         <div>
                                              <div key={msg.id} className={`chat-detail1 ${msg.sender === "You" ? "msg-send-container" : "msg-received-container"}`}>

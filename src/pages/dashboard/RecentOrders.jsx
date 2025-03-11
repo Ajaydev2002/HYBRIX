@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import DropdownMenu from "../../consts/DropdownMenu";
 import customerDetails from "../../consts/customerDetails";
 import TablePagination from '@mui/material/TablePagination';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -43,11 +42,11 @@ const RecentOrders = ({ isOpen }) => {
                         </div>
                         <div className="RC-input-container">
                             <div className="RC-dropdown-selection" onClick={toggleDropdown} >
-                                <div>
+                                <div className="recent-order-header-input">
                                     <input type="text" placeholder="Select day " value={selectedValues} readOnly />
                                 </div>
                                 <div>
-                                    <ExpandMoreIcon sx={{ fontSize: "16px", marginTop: "5px"}} />
+                                    <ExpandMoreIcon sx={{ fontSize: "16px", marginTop: "5px" }} />
                                 </div>
                             </div>
                             <div className={`RC-dropdown ${dropdown ? "Dropdown-open" : "Dropdown-close"}`}>
@@ -63,45 +62,46 @@ const RecentOrders = ({ isOpen }) => {
                     </div>
                 </div>
 
-                <div className="customer-details-container">
-                    <table>
-                        <thead>
-                            <tr className="customer-details-header">
-                                <th>Purchase ID</th>
-                                <th>Customer Name</th>
-                                <th>Product Name</th>
-                                <th>Amount </th>
-                                <th>OrderDate</th>
-                                <th>Vendor</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
+                <div className="customer-details-tabel-container">
+                    <div className="customer-details-container">
+                        <table>
+                            <thead>
+                                <tr className="customer-details-header">
+                                    <th>Purchase ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Product Name</th>
+                                    <th>Amount </th>
+                                    <th>OrderDate</th>
+                                    <th>Vendor</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
 
-                        <tbody>
-                            {customerDetails
-                                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                .map((customer) => (
-                                    <tr key={customer.purchaseID} className="customer-details">
+                            <tbody>
+                                {customerDetails
+                                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                    .map((customer) => (
+                                        <tr key={customer.purchaseID} className="customer-details">
 
-                                        <td className="purchase-id">{customer.purchaseID}</td>
-                                        <td className="customer-name"> <img src={customer.img} className="customer-image" />{customer.customerName}</td>
-                                        <td className="product-name">{customer.productName}</td>
-                                        <td className="product-price">${customer.Amount}</td>
-                                        <td className="order-date">{customer.orderDate}</td>
-                                        <td className="vendor">{customer.vendor}</td>
-                                        <td className="order-status-container">
-                                            <div className={`order-status ${customer.status === "Paid" ? "status-paid" :
-                                                customer.status === "UnPaid" ? "status-unpaid" : "status-pending"
-                                                }`}>
-                                                <h5>{customer.status}</h5>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-
-                    </table>
+                                            <td className="purchase-id">{customer.purchaseID}</td>
+                                            <td className="customer-name"> <img src={customer.img} className="customer-image" />{customer.customerName}</td>
+                                            <td className="product-name">{customer.productName}</td>
+                                            <td className="product-price">${customer.Amount}</td>
+                                            <td className="order-date">{customer.orderDate}</td>
+                                            <td className="vendor">{customer.vendor}</td>
+                                            <td className="order-status-container">
+                                                <div className={`order-status ${customer.status === "Paid" ? "status-paid" :
+                                                    customer.status === "UnPaid" ? "status-unpaid" : "status-pending"
+                                                    }`}>
+                                                    <h5>{customer.status}</h5>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div className="recentorder-footer">

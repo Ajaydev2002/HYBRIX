@@ -2,6 +2,8 @@ import React from "react";
 import stockReportDetails from "../../consts/stockReportDetails";
 
 const StockReport = ({ isOpen }) => {
+
+
     return (
         <div className="stockreport">
             <div className={`stockreport-container ${isOpen ? "open" : "closed"}`}>

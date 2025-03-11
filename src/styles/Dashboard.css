@@ -351,7 +351,14 @@ body {
     border-left: 1px solid #438eff1a;
     border-right: 1px solid #438eff1a;
     background-color: rgb(255, 255, 255);
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
+.custom-line path {
+    pointer-events: all;
+    cursor: crosshair;
+  }
+  
 .tooltip-month {
     background-color: #eceff1;
     border-top-left-radius: 6px;
@@ -410,6 +417,9 @@ body {
     border: none;
     background-color: #fff;
 }
+.order-btn:hover {
+    cursor: pointer;
+}
 
 .order-btn p {
     color: rgba(20, 24, 33, 0.75);
@@ -424,7 +434,9 @@ body {
     background-color: #fff;
     padding-left: 10px;
 }
-
+.earning-btn:hover  {
+    cursor: pointer;
+}
 .earning-btn p {
     color: rgba(20, 24, 33, 0.75);
     margin-left: -5px;
@@ -438,7 +450,9 @@ body {
     background-color: #fff;
     padding-left: 10px;
 }
-
+.refund-btn:hover {
+    cursor: pointer;
+}
 .refund-btn p {
     color: rgba(20, 24, 33, 0.75);
     margin-left: -5px;
@@ -450,8 +464,14 @@ body {
 
 
 
+
 .sales-container {
     margin-top: 24px;
+}
+.upgrade-section1 {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
 }
 .upgrade-benifits.open {
     width: 875px;
@@ -491,7 +511,9 @@ body {
     background-color: rgb(74, 176, 193);
     border-radius: 25px;
 }
-
+.upgrade-container:hover {
+    cursor: pointer;
+}
 .upgrade-container p {
     color: #fff;
     padding-inline: 11px;
@@ -526,6 +548,8 @@ body {
     justify-content: space-between;
     padding: 20px;
     border: 1px solid rgba(67, 142, 255, 0.1);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 .RO-header-text p {
     color: rgba(20, 24, 33, 0.75);
@@ -542,6 +566,15 @@ body {
 .RC-dropdown-selection {
     display: flex;
     align-items: center;
+}
+.sort-by h5 {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(20, 24, 33, 0.75);
+    padding-right: 5px;
+}
+.RC-dropdown-selection:hover {
+    cursor: pointer;
 }
 .RC-dropdown-selection input {
     border: none;
@@ -562,9 +595,10 @@ body {
 }
 .RC-dropdown p {
     font-weight: 400;
-    padding: 5px 10px;
+    padding: 6px 10px;
     white-space: nowrap;
     font-size: 14px;
+    color: rgba(0, 0, 0, 0.87);
 }
 .RC-dropdown p:hover {
     background-color: #f0f0f0;
@@ -734,6 +768,7 @@ td {
     padding: 20px;
     border: 1px solid rgba(67, 142, 255, 0.1);
     background-color: rgb(255, 255, 255);
+    border-radius: 6px;
 }
 
 .bestselling-image-container {
@@ -939,7 +974,8 @@ td {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgba(67, 142, 255, 0.1);
-    padding: 20px;
+    width: 100%;
+    padding-block: 20px;
 }
 
 .sales-category-header-name h5 {
@@ -984,6 +1020,7 @@ td {
 }  
 .sales-dropdown p:hover {
    background-color: #f0f0f0;
+   cursor: pointer;
 }
 
 
@@ -1004,6 +1041,7 @@ td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .pielegand-context1 {
@@ -1016,7 +1054,9 @@ td {
     border: none;
     background-color: #fff;
 }
-
+.fashion-btn:hover {
+    cursor: pointer;
+}
 .fashion-btn p {
     color: rgba(20, 24, 33, 0.75);
     margin-left: -5px;
@@ -1029,7 +1069,9 @@ td {
     border: none;
     background-color: #fff;
 }
-
+.electronics-btn:hover {
+    cursor: pointer;
+}
 .electronics-btn p {
     color: rgba(20, 24, 33, 0.75);
     margin-left: -5px;
@@ -1046,7 +1088,9 @@ td {
     border: none;
     background-color: #fff;
 }
-
+.groceries-btn:hover {
+    cursor: pointer;
+}
 .groceries-btn p {
     color: rgba(20, 24, 33, 0.75);
     margin-left: -5px;
@@ -1059,7 +1103,9 @@ td {
     border: none;
     background-color: #fff;
 }
-
+.others-btn:hover {
+    cursor: pointer;
+}
 .others-btn p {
     color: rgba(20, 24, 33, 0.75);
     margin-left: -5px;
@@ -1091,6 +1137,8 @@ td {
     justify-content: space-between;
     border: 1px solid rgba(67, 142, 255, 0.1);
     padding: 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 
 }
 
@@ -1123,6 +1171,8 @@ td {
 .stockreport-product-detail-container {
     overflow-x: auto;
     border: 1px solid rgba(67, 142, 255, 0.1);
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 
 .stockreport-product-details {
@@ -1208,6 +1258,7 @@ td {
 .saleslocation-container {
     transition: width 0.3s ease-in-out;
     border: 1px solid rgba(67, 142, 255, 0.1);
+    border-radius: 6px;
 }
 .saleslocation-container.open {
     width: 914px;
@@ -1522,6 +1573,8 @@ td {
     height: 14px;
     text-align: center;
     font-size: 12px;
+    margin-right: 8px;
+    margin-top: 5px;
 }
 
 
@@ -1829,21 +1882,26 @@ td {
         width: 93vw;
     } 
 
+
     .upgrade-benifits.open {
         width: 89vw;
     } 
 
+
     .recent-order-container.open {
         width: 93vw;
     } 
+    .customer-details-tabel-container {
+        overflow-x: auto;
+    }
     .best-selling-container.open {
         width: 90vw;
     } 
     .bestsell-item-div.open {
-        width: 21.5vh;
+        width: 30vw;
     }
     .bestsell-image.open {
-        width: 18vh;
+        width: 25vw;
     }
 
 
@@ -1851,7 +1909,7 @@ td {
         margin-left: 0px;
     }
     .product-delivery-container.open {
-        width: 70vh;
+        width: 93vw;
     }
     .product-delivery-details {
         width: 88vw;
@@ -1879,7 +1937,7 @@ td {
         margin-left: 0px;
     }
     .stockreport-container.open {
-        width: 92vw;
+        width: 93vw;
     }
 
     .saleslocation-container.open {
@@ -1897,12 +1955,11 @@ td {
         width: 90vw;
     }
 
-
     .recent-chat {
         margin-left: 0px;
     }
     .recent-chat-container.open {
-        width: 92vw;
+        width: 93vw;
     }
     .chat-profile {
         gap: 25px;
@@ -1913,5 +1970,151 @@ td {
     }
     .chat-section.open {
         width: 93vw;
+    }
+    .chat-section {
+        top: 65;
+        right: 0;
+        height: 100vh;
+    }
+}
+
+@media (max-width : 500px) {
+
+    .totalearnings-container.open {
+        width: 80vw;
+    }
+    .orders-container.open {
+        width: 80vw;
+    }
+    .Earning-container.open {
+        width: 80vw;
+    }
+    .revenue-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .revenue-header h6 {
+        padding-bottom: 10px;
+    }
+
+    .dashboard-chart-container.open {
+        width: 88vw;
+    } 
+
+    .upgrade-benifits {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .upgrade-section1 {
+        width: 100%;
+    }
+    .upgrade-benifits.open {
+        width: 78vw;
+    } 
+    .customer-details-container {
+        overflow-x: auto;
+    }
+
+
+
+    .recent-order-container.open {
+        width:88vw;
+    } 
+    .RO-header-text p {
+        font-weight: 600;
+        padding-bottom: 10px;
+    }
+    .recentorder-header {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .best-selling-container.open {
+        width: 90vw;
+    } 
+    .bestsell-item-div.open {
+        width: 45vw;
+    }
+    .bestsell-image.open {
+        width: 35vw;
+    }
+
+
+    .product-delivery-container.open {
+        width: 90vw;
+    }
+    .product-delivery-header h5 {
+        font-weight: 600;
+    }
+    .product-delivery-details {
+        width: 75vw;
+    }
+
+
+    .sales-by-category-container.open {
+        width: 88vw;
+    }
+    .sales-category-header-name h5 {
+        font-weight: 600;
+    }
+    .pielegand-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .stockreport-container.open {
+        width: 88vw;
+    }
+    .stockreport-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .stockreport-heading {
+        padding-bottom: 15px;
+    }
+
+
+    .saleslocation-container.open {
+        width: 89vw;
+    }
+    .saleslocation-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .saleslocation-header h5 {
+        font-weight: 600;
+        padding-bottom: 15px;
+    }
+    .location img {
+        width: 87vw;
+        height: 60vw;
+    }
+    .statistics-detail-container {
+        width: 86vw;
+    }
+
+
+    .recent-chat-container.open {
+        width: 90vw;
+    }
+    .recent-chat-heading h5 {
+        font-weight: 600;
+    }
+    .chat-container {
+        padding-left: 10px;
+    }
+    .chat-section.open {
+        width: 86vw;
+    }
+    .chat-section {
+        top: 65;
+        right: 0;
+        height: 92vh;
     }
 }

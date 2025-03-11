@@ -21,7 +21,7 @@ const Navigation = [
     {
         segment: '/',
         title: 'Dashboard',
-        icon: <DashboardIcon />
+        icon: <DashboardIcon style={{fontSize: 18}}/>
     },
 
     {
@@ -31,7 +31,7 @@ const Navigation = [
     {
         segment: '/authentication',
         title: 'Authentication',
-        icon: <PersonIcon />,
+        icon: <PersonIcon style={{fontSize: 18}}/>,
         children: [
             {
                 segment: '/sign-in',
@@ -41,17 +41,47 @@ const Navigation = [
                 segment: '/sign-up',
                 title: 'Sign up'
             },
+            {
+                segment: '/sign-up',
+                title: 'Passward Reset'
+            },
+            {
+                segment: '/sign-up',
+                title: 'Password Create'
+            },
+            {
+                segment: '/sign-up',
+                title: 'Lock Screen'
+            },
+            {
+                segment: '/sign-up',
+                title: 'Logout'
+            },
         ]
     },
     {
         segment: '/pages',
         title: 'Pages',
-        icon: <PagesIcon />
+        icon: <PagesIcon style={{fontSize: 18}}/>,
+        children: [
+            {
+                segment: '/sign-in',
+                title: 'Starter'
+            },
+            {
+                segment: '/sign-up',
+                title: 'Profile'
+            },
+            {
+                segment: '/sign-up',
+                title: 'Team'
+            },
+        ]
     },
     {
         segment: '/widgets',
         title: 'Widgets',
-        icon: <WidgetsIcon />
+        icon: <WidgetsIcon style={{fontSize: 18}}/>
     },
 
     {
@@ -61,19 +91,19 @@ const Navigation = [
     {
         segment: '/calendar',
         title: 'Calendar',
-        icon: <EventIcon />
+        icon: <EventIcon style={{fontSize: 18}}/>
     },
     {
         segment: '/api-keys',
-        title: 'API keys', icon: <VpnKeyIcon />
+        title: 'API keys', icon: <VpnKeyIcon style={{fontSize: 18}}/>
     },
     {
         segment: '/contact',
-        title: 'Contact', icon: <ContactsIcon />
+        title: 'Contact', icon: <ContactsIcon style={{fontSize: 18}}/>
     },
     {
         segment: '/leaderboard',
-        title: 'LeaderBoard', icon: <LeaderboardIcon />
+        title: 'LeaderBoard', icon: <LeaderboardIcon style={{fontSize: 18}}/>
     },
 
     {
@@ -83,32 +113,32 @@ const Navigation = [
     {
         segment: '/overview',
         title: 'Overview',
-        icon: <DashboardIcon />
+        icon: <DashboardIcon style={{fontSize: 18}}/>
     },
     {
         segment: '/components',
         title: 'Components',
-        icon: <CategoryIcon />
+        icon: <CategoryIcon style={{fontSize: 18}}/>
     },
     {
         segment: '/inputs',
         title: 'Inputs',
-        icon: <InputIcon />
+        icon: <InputIcon style={{fontSize: 18}}/>
     },
     {
         segment: '/data-display',
         title: 'Data Display',
-        icon: <TableChartIcon />
+        icon: <TableChartIcon style={{fontSize: 18}}/>
     },
     {
         segment: '/feedback',
         title: 'Feedback',
-        icon: <FeedbackIcon />
+        icon: <FeedbackIcon style={{fontSize: 18}}/>
     },
     {
         segment: '/surfaces',
         title: 'Surfaces',
-        icon: <WebAssetIcon />
+        icon: <WebAssetIcon style={{fontSize: 18}}/>
     },
 ];
 

@@ -36,7 +36,7 @@ const CustomLegand = ({ setHoveredButton }) => {
             <button className='order-btn'
                 onMouseEnter={() => setHoveredButton("Orders")}
                 onMouseLeave={() => setHoveredButton(null)} >
-                <FiberManualRecordIcon sx={{ color: "#eff2f7", fontSize: "14px", paddingRight: "5px" }} />
+                <FiberManualRecordIcon sx={{ color: "#eff2f7", fontSize: "15px", paddingRight: "5px" }} />
                 <p> Orders </p>
             </button>
 
@@ -183,7 +183,8 @@ const DashboardChart = ({ isOpen }) => {
                             stroke={hoveredButton === "Earnings" || hoveredButton === "Orders" ? "#ddebff" : "#8561f9"}
                             strokeWidth={2}
                             strokeDasharray="7 8"
-                            dot={false} />
+                            dot={false} 
+                            className="custom-line" />
 
                         <Legend content={<CustomLegand setHoveredButton={setHoveredButton} />} />
 

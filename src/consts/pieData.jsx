@@ -6,13 +6,13 @@ const pieData = [
         bgcolor: "#bda0fd"
     },
     {
-        name: "Electronics",
+        name: "Groceries",
         value: 67,
         color: "#2dcb73",
          bgcolor: "#7efdad"
     },
     {
-        name: "Groceries",
+        name: "Electronics",
         value: 55,
         color: "#4ab0c1",
         bgcolor: "#8ee4f3",
