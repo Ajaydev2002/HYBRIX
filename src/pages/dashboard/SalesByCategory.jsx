@@ -8,6 +8,7 @@ const SalesByCategory = ({ isOpen }) => {
 
     const [hoveredPie, setHoveredPie] = useState(null);
     const [salesMenu, setSalesMenu] = useState(false);
+    const [hoveredCircle, setHoveredCircle] = useState(null);
 
     const handleSelect = () => {
         setSalesMenu(false);
@@ -27,21 +28,37 @@ const SalesByCategory = ({ isOpen }) => {
 
             <div className="pielegand-container">
                 <div className='pielegand-context1'>
-                    <button className='fashion-btn'>
+                    
+                    <button className='fashion-btn'
+                    onMouseEnter={() => setHoveredCircle("Fashion")}
+                    onMouseLeave={() => setHoveredCircle(null)}
+                    >
                         <FiberManualRecordIcon sx={{ color: "#438eff", fontSize: "18px", paddingRight: "7px" }} />
                         <p> Fashion </p>
                     </button>
-                    <button className='electronics-btn'>
+
+                    <button className='electronics-btn'
+                    onMouseEnter={() => setHoveredCircle("Electronics")}
+                    onMouseLeave={() => setHoveredCircle(null)}
+                    >
                         <FiberManualRecordIcon sx={{ color: "#4ab0c1", fontSize: "18px", paddingRight: "7px" }} />
                         <p> Electronics </p>
                     </button>
-                    <button className='groceries-btn'>
+
+                    <button className='groceries-btn'
+                    onMouseEnter={() => setHoveredCircle("Groceries")}
+                    onMouseLeave={() => setHoveredCircle(null)}
+                    >
                         <FiberManualRecordIcon sx={{ color: "#2dcb73", fontSize: "18px", paddingRight: "7px" }} />
                         <p> Groceries</p>
                     </button>
                 </div>
+
                 <div className='pielegand-context2'>
-                    <button className='others-btn'>
+                    <button className='others-btn'
+                    onMouseEnter={() => setHoveredCircle("Others")}
+                    onMouseLeave={() => setHoveredCircle(null)}
+                    >
                         <FiberManualRecordIcon sx={{ color: "#8561f9", fontSize: "18px", paddingRight: "7px" }} />
                         <p> Others</p>
                     </button>
@@ -113,7 +130,11 @@ const SalesByCategory = ({ isOpen }) => {
                                 outerRadius={isOpen ? (60 + index * 10) : (60 + index * 13)}
                                 startAngle={90}
                                 endAngle={90 - entry.value * 3.6}
-                                fill={hoveredPie && hoveredPie.name === entry.name ? entry.bgcolor : entry.color}
+                                fill={hoveredPie && hoveredPie.name === entry.name ? entry.bgcolor 
+
+                                    : (hoveredCircle && hoveredCircle !== entry.name ? `${entry.color}80` : entry.color)
+
+                                }
                                 stroke="none"
                                 onMouseEnter={() => handleMouseEnter(entry)}
                                 onMouseLeave={handleMouseLeave}

@@ -11,10 +11,7 @@ const CartBadge = styled(Badge)({
   },
 });
 
-const ShoppingPopper = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [open, setOpen] = useState(false);
-
+const ShoppingPopper = ({ handleClick, open, anchorEl }) => {
 
   const [cartItems, setCartItems] = useState([
     { id: 1, name: "Branded T-shirts", quantity: 10, price: 320, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-1.3479ed54a1fdc6027c39.png" },
@@ -23,11 +20,6 @@ const ShoppingPopper = () => {
     { id: 4, name: "Adidas best for walk", quantity: 2, price: 400, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-5.10b7411f7c15d357a411.png" },
     { id: 5, name: "Branded T-shirt", quantity: 1, price: 243, img: "https://themes.themesbrand.com/hybrix/react-material/light/static/media/img-6.f80c5f48c1fa4bb8e9cb.png" }
   ]);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-    setOpen((prev) => !prev);
-  };
 
 
   const handleRemove = (id) => {

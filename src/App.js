@@ -5,8 +5,7 @@ import Header from "./components/Header";
 import Dashboard from './components/Dashboard.jsx';
 import Authentication from './components/Authentication';
 import Error from "./components/Error.jsx";
-import Footer from "./pages/dashboard/Footer.jsx";
-import PersonalChat from "./pages/dashboard/PersonalChat.jsx"
+import PersonalChat from "./pages/dashboard/PersonalChat.jsx";
 
 
 const Applayout = () => {
@@ -23,9 +22,7 @@ const Applayout = () => {
       <div className={`outlet-container ${isOpen ? "open" : "closed"}`}>
 
         <Outlet context={{ isOpen }}/>
-        
-        <Footer/>
-        
+
       </div>
     </div>
   )
@@ -48,10 +45,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/Authentication",
         element: <Authentication />
-      },
-      {
-        path: "/Personal",
-        element: <PersonalChat/>
       },
     ],
     errorElement: <Error/>

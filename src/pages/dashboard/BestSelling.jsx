@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import bestSelling from "../../consts/bestSelling";
@@ -8,9 +8,27 @@ import StarIcon from '@mui/icons-material/Star';
 const BestSelling = ({ isOpen }) => {
 
     const [page, setPage] = useState(0);
-    const itemsPerPage = 3;
-
+    const [itemsPerPage, setItemsPerPage] = useState(3);
     const totalItems = bestSelling.length;
+
+    useEffect(() => {
+        const updateItemsPerPage = () => {
+            if (window.innerWidth <= 500) {
+                setItemsPerPage(2);
+            } else {
+                setItemsPerPage(3);
+            }
+        };
+
+        updateItemsPerPage();
+
+        window.addEventListener("resize", updateItemsPerPage);
+
+        return() => {
+            window.addEventListener("resize", updateItemsPerPage);
+        };
+    }, [])
+
 
     const handlePrev = () => {
         setPage(prev => (prev > 0 ? prev - 1 : prev));

@@ -13,6 +13,7 @@ import StockReport from "../pages/dashboard/StockReport";
 import SalesLocation from "../pages/dashboard/SalesLocation";
 import RecentChat from "../pages/dashboard/RecentChat";
 import { useOutletContext } from "react-router-dom";
+import Footer from "../pages/dashboard/Footer";
 
 
 
@@ -24,6 +25,7 @@ const Dashboard = () => {
         <div className="dashboard">
             <div className="dashboard-content">
                 <div className="dashboard-container">
+
                     <div className="dashboard-section1">
                         <div className="D-total-orders-container">
                             <TotalEarnings isOpen={isOpen}/>
@@ -34,26 +36,32 @@ const Dashboard = () => {
                             <DashboardChart isOpen={isOpen}/>
                         </div>
                     </div>
+
                     <div className="RO-MS-container">
                         <MoreSales isOpen={isOpen}/>
                         <RecentOrders isOpen={isOpen}/>
                     </div>
+
                     <div className="product-selling">
                         <BestSelling isOpen={isOpen}/>
                         <ProductDelivery isOpen={isOpen}/>
                     </div>
+
                     <div className="sales-stock">
                         <SalesByCategory isOpen={isOpen}/>
                         <StockReport isOpen={isOpen}/>
                     </div>
+
                     <div>
                         <SalesLocation isOpen={isOpen}/>
                     </div>
                 </div>
+                
                 <div>
                     <RecentChat isOpen={isOpen}/>
                 </div>
             </div>
+             <Footer/>
         </div>
     )
 }

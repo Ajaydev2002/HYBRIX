@@ -5,6 +5,7 @@ const AnimatedCounter = ({ initial, target,intervaltime}) => {
     const [value, setValue] = useState(initial);
 
     useEffect(() => {
+        
         const interval = setInterval(() => {
             setValue((prevCount) => {
                 if (prevCount >= target) {

@@ -19,7 +19,7 @@ const Navigation = [
         title: 'MENU'
     },
     {
-        segment: '/',
+        segment: '/Dashboard',
         title: 'Dashboard',
         icon: <DashboardIcon style={{fontSize: 18}}/>
     },
@@ -29,7 +29,6 @@ const Navigation = [
         title: 'PAGES'
     },
     {
-        segment: '/authentication',
         title: 'Authentication',
         icon: <PersonIcon style={{fontSize: 18}}/>,
         children: [
@@ -42,34 +41,33 @@ const Navigation = [
                 title: 'Sign up'
             },
             {
-                segment: '/sign-up',
+                segment: '/password-reset',
                 title: 'Passward Reset'
             },
             {
-                segment: '/sign-up',
+                segment: '/password-create',
                 title: 'Password Create'
             },
             {
-                segment: '/sign-up',
+                segment: '/lock-screen',
                 title: 'Lock Screen'
             },
             {
-                segment: '/sign-up',
+                segment: '/logout',
                 title: 'Logout'
             },
         ]
     },
     {
-        segment: '/pages',
         title: 'Pages',
         icon: <PagesIcon style={{fontSize: 18}}/>,
         children: [
             {
-                segment: '/sign-in',
+                segment: '/starter',
                 title: 'Starter'
             },
             {
-                segment: '/sign-up',
+                segment: '/profile',
                 title: 'Profile'
             },
             {

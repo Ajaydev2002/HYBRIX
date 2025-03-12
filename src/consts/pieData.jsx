@@ -1,6 +1,6 @@
 const pieData = [
     {
-        name: "Fashion",
+        name: "Others",
         value: 83,
         color: "#8561f9",
         bgcolor: "#bda0fd"
@@ -18,7 +18,7 @@ const pieData = [
         bgcolor: "#8ee4f3",
     },
     {
-        name: "Others",
+        name: "Fashion",
         value: 44,
         color: "#438eff",
         bgcolor: "#89c5fd",

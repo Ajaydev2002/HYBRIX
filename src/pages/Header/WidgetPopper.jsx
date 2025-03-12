@@ -7,14 +7,7 @@ import dropbox from "../../assets/dropbox.png";
 import mail from "../../assets/mail.png";
 import slack from "../../assets/slack.png";
 
-const WidgetPopper = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [open, setOpen] = useState(false);
-
-  const handleClick = (event) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget);
-    setOpen(!open);
-  };
+const WidgetPopper = ({ handleClick, open, anchorEl }) => {
 
   return (
     <Box>

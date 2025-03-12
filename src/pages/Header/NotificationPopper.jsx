@@ -12,14 +12,7 @@ const CartBadge = styled(Badge)({
     },
 });
 
-const NotificationPopper = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
-    const [open, setOpen] = useState(false);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-        setOpen((prev) => !prev);
-    };
+const NotificationPopper = ({ handleClick, open, anchorEl }) => {
 
     return (
         <Box>

@@ -120,7 +120,12 @@ body {
     padding-block: 10px;
     color: rgb(109, 112, 128);
 }
-
+.menu-header-dot {
+    text-align: center;
+    color: rgb(109, 112, 128);
+    padding-right: 10px;
+    font-size: 20px;
+}
 .link {
     display: flex;
     align-items: center;
@@ -149,8 +154,26 @@ body {
 .Header-main-content {
     width: 100%;
 }
-
-
+.show-icon {
+    display: block;
+}
+.hide-icon {
+    display: none;
+}
+.sidebar-arrow{
+    font-size: 10px;
+    margin-left: auto;
+}
+.childMenu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 40;
+}
+.childMenu a {
+    color: rgb(109, 112, 128);
+    padding-block: 10px;
+}
 
 .open-searchbar {
     display: flex;
@@ -418,11 +441,13 @@ body {
 
 
 
+.shopping-container{
+    width: 350px;
+}
 .shopping-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 300px;
 }
 .shoppingitems{
     padding-block: 10px;
@@ -617,5 +642,28 @@ body {
     }
     .profile-section1-context1 p {
         display: none;
+    }
+    .headeer-section2 {
+        gap: 2vw;
+    }
+    .widgtes-container {
+        width: 75vw;
+    }
+    .shopping-container{
+        width: 75vw;
+    }
+    .notification-container {
+        width: 70vw;
+    }
+    .dark-mode-container {
+        left: -80px;
+        width: 55vw;
+        padding: 10px;
+    }
+    .default-light-mode p {
+        padding-block: 8px;
+    }
+    .dark-mode p {
+        padding-block: 8px;
     }
 }

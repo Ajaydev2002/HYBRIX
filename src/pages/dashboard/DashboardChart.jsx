@@ -35,7 +35,7 @@ const CustomLegand = ({ setHoveredButton }) => {
         <div className='legand-context'>
             <button className='order-btn'
                 onMouseEnter={() => setHoveredButton("Orders")}
-                onMouseLeave={() => setHoveredButton(null)} >
+                onMouseLeave={() => setHoveredButton(null)}>
                 <FiberManualRecordIcon sx={{ color: "#eff2f7", fontSize: "15px", paddingRight: "5px" }} />
                 <p> Orders </p>
             </button>
@@ -59,6 +59,7 @@ const CustomLegand = ({ setHoveredButton }) => {
 
 
 const DashboardChart = ({ isOpen }) => {
+    
     const [pieData, setPieData] = useState(oneYearData);
     const [activeButton, setActiveButton] = useState("1Y");
     const [hoveredButton, setHoveredButton] = useState(null);

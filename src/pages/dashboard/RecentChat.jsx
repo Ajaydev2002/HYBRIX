@@ -15,18 +15,46 @@ const RecentChat = ({ isOpen }) => {
     const [filteredChat, setFilteredChat] = useState(chatList);
     const [menuOpen, setMenuOpen] = useState(false);
     const [message, setMessage] = useState("");
+    const [chatData, setChatData] = useState(chatList);
 
     const handleInputChange = (event) => {
         setMessage(event.target.value);
     }
-
+ 
     const sendMessage = () => {
+        
         if (message.trim() !== "") {
             console.log("message sent:", message);
+
+            const updateChatList = chatData.map((chat) => {
+                
+                if(chat.id === selectedChatId) {
+                    const newMessage = {
+                        id: new Date().getTime(),
+                        sender: "You",
+                        message: message,
+                        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                    };
+
+                    return {
+                        ...chat,
+                        chats: [...chat.chats, newMessage]
+                    };
+                }
+                return chat;
+            });
+
+            setChatData(updateChatList);
+            setFilteredChat(updateChatList);
             setMessage("");
         }
     }
+
     const menu = () => setMenuOpen(!menuOpen)
+
+    const handleMenuClick = () => {
+        setMenuOpen(false)
+    }
 
     const handleProfileClick = (id) => {
         setSelectedChatId(id);
@@ -77,7 +105,7 @@ const RecentChat = ({ isOpen }) => {
                 </div>
 
 
-                <div className="list-of-chat" >
+                <div className="list-of-chat">
                     {filteredChat.map((item) => (
                         <div className="chat-container" key={item.id} onClick={() => handleProfileClick(item.id)}>
                             <div className="outer-profile">
@@ -119,15 +147,15 @@ const RecentChat = ({ isOpen }) => {
                                             <MoreVertIcon sx={{ fontSize: 20, marginRight: 2, color: "rgb(133, 97, 249)" }} onClick={menu} />
 
                                             <div className="chat-menu-section" style={{ display: menuOpen ? "block" : "none", }}>
-                                                <div className="archive-section">
+                                                <div className="archive-section" onClick={handleMenuClick}>
                                                     <ArchiveIcon sx={{ fontSize: "20px" }} />
                                                     <p>Archive</p>
                                                 </div>
-                                                <div className="share-section">
+                                                <div className="share-section" onClick={handleMenuClick}>
                                                     <ShareIcon sx={{ fontSize: "20px" }} />
                                                     <p>Muted</p>
                                                 </div>
-                                                <div className="delete-section">
+                                                <div className="delete-section" onClick={handleMenuClick}>
                                                     <DeleteIcon sx={{ fontSize: "20px" }} />
                                                     <p>Delete</p>
                                                 </div>
@@ -175,6 +203,8 @@ const RecentChat = ({ isOpen }) => {
                                             </div>
                                         </div>
                                     ))}
+
+
 
                                     <div className="send-message-container">
 

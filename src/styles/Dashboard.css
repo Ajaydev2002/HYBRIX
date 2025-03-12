@@ -9,12 +9,20 @@ body {
 }
 
 
+.dashboard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 .dashboard-content {
+    flex-grow: 1; 
     display: flex;
     margin-top: 60px;
     padding-left: 24px;
     padding-right: 24px;
+    min-height: calc(100vh - 60px);
 }
 .dashboard-container {
     padding-top: 24px;
@@ -1399,12 +1407,13 @@ td {
 }
 .recent-chat-container {
     position: fixed;
+    bottom: 20px;
     right: 24px;
     top: 60px;
-    height: 92vh;
+    height: 91vh; 
     overflow-y: auto;
     border: 1px solid rgba(67, 142, 255, 0.1);
-    transition: width 0.3s ease-in-out;
+    transition: bottom 0.3s ease-in-out;
 }
 .recent-chat-container.open {
     width: 290px;
@@ -1584,7 +1593,7 @@ td {
     top: 65;
     right: 24;
     background-color: #fff;
-    height: 92vh;
+    height: 91vh;
     z-index: 1;
     position: fixed;
     overflow-y: scroll;
@@ -1796,6 +1805,11 @@ td {
     border-radius: 4px;
 }
 
+@media (max-width: 1024px) {
+    .recent-chat-container {
+        bottom: 80px; 
+    }
+}
 
 
 @media (max-width : 920px) {

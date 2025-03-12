@@ -9,14 +9,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LockIcon from '@mui/icons-material/Lock';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-const ProfilePopper = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
-    const [open, setOpen] = useState(false);
-
-    const handleClick = (event) => {
-        setAnchorEl(anchorEl ? null : event.currentTarget);
-        setOpen(!open);
-    };
+const ProfilePopper = ({ handleClick, open, anchorEl }) => {
 
     return (
         <Box>
@@ -32,7 +25,7 @@ const ProfilePopper = () => {
                 </div>
             </Box>
 
-            <Popper open={open} anchorEl={anchorEl} placement="bottom">
+            <Popper open={open} anchorEl={anchorEl} placement="bottom-start">
                 <Paper sx={{ padding: 2, boxShadow: 3, bgcolor: "background.paper" }}>
                     <Box>
                         <div className="profile-container">
@@ -51,6 +44,7 @@ const ProfilePopper = () => {
                     </Box>
                 </Paper>
             </Popper>
+            
         </Box>
     );
 };
