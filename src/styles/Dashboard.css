@@ -581,6 +581,9 @@ body {
     color: rgba(20, 24, 33, 0.75);
     padding-right: 5px;
 }
+.recent-order-header-input:hover {
+    cursor: pointer;
+}
 .RC-dropdown-selection:hover {
     cursor: pointer;
 }
