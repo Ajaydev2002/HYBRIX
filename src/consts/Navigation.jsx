@@ -23,7 +23,6 @@ const Navigation = [
         title: 'Dashboard',
         icon: <DashboardIcon style={{fontSize: 18}}/>
     },
-
     {
         kind: 'header',
         title: 'PAGES'
@@ -33,27 +32,27 @@ const Navigation = [
         icon: <PersonIcon style={{fontSize: 18}}/>,
         children: [
             {
-                segment: '/sign-in',
+                segment: '/',
                 title: 'Sign in'
             },
             {
-                segment: '/sign-up',
+                segment: '/',
                 title: 'Sign up'
             },
             {
-                segment: '/password-reset',
+                segment: '/',
                 title: 'Passward Reset'
             },
             {
-                segment: '/password-create',
+                segment: '/',
                 title: 'Password Create'
             },
             {
-                segment: '/lock-screen',
+                segment: '/',
                 title: 'Lock Screen'
             },
             {
-                segment: '/logout',
+                segment: '/',
                 title: 'Logout'
             },
         ]
@@ -63,21 +62,21 @@ const Navigation = [
         icon: <PagesIcon style={{fontSize: 18}}/>,
         children: [
             {
-                segment: '/starter',
+                segment: '/',
                 title: 'Starter'
             },
             {
-                segment: '/profile',
+                segment: '/',
                 title: 'Profile'
             },
             {
-                segment: '/sign-up',
+                segment: '/',
                 title: 'Team'
             },
         ]
     },
     {
-        segment: '/widgets',
+        segment: '/',
         title: 'Widgets',
         icon: <WidgetsIcon style={{fontSize: 18}}/>
     },
@@ -87,20 +86,20 @@ const Navigation = [
         title: 'APPS'
     },
     {
-        segment: '/calendar',
+        segment: '/',
         title: 'Calendar',
         icon: <EventIcon style={{fontSize: 18}}/>
     },
     {
-        segment: '/api-keys',
+        segment: '/',
         title: 'API keys', icon: <VpnKeyIcon style={{fontSize: 18}}/>
     },
     {
-        segment: '/contact',
+        segment: '/',
         title: 'Contact', icon: <ContactsIcon style={{fontSize: 18}}/>
     },
     {
-        segment: '/leaderboard',
+        segment: '/',
         title: 'LeaderBoard', icon: <LeaderboardIcon style={{fontSize: 18}}/>
     },
 
@@ -109,34 +108,96 @@ const Navigation = [
         title: 'COMPONENTS'
     },
     {
-        segment: '/overview',
+        segment: '/',
         title: 'Overview',
         icon: <DashboardIcon style={{fontSize: 18}}/>
     },
     {
-        segment: '/components',
         title: 'Components',
-        icon: <CategoryIcon style={{fontSize: 18}}/>
+        icon: <CategoryIcon style={{fontSize: 18}}/>,
+        children: [
+            {
+                segment: '/',
+                title: 'Utilities'
+            },
+            {
+                segment: '/',
+                title: 'Spinners'
+            },
+        ]
+
     },
     {
-        segment: '/inputs',
         title: 'Inputs',
-        icon: <InputIcon style={{fontSize: 18}}/>
+        icon: <InputIcon style={{fontSize: 18}}/>,
+        children: [
+            {
+                segment: '/',
+                title: 'AutoComplete'
+            },
+            {
+                segment: '/',
+                title: 'Buttons'
+            },
+            {
+                segment: '/',
+                title: 'Ratings'
+            },
+        ]
     },
     {
-        segment: '/data-display',
         title: 'Data Display',
-        icon: <TableChartIcon style={{fontSize: 18}}/>
+        icon: <TableChartIcon style={{fontSize: 18}}/>,
+        children: [
+            {
+                segment: '/',
+                title: 'Avatar'
+            },
+            {
+                segment: '/',
+                title: 'Chip'
+            },
+            {
+                segment: '/',
+                title: 'Divider'
+            },
+        ]
     },
     {
-        segment: '/feedback',
         title: 'Feedback',
-        icon: <FeedbackIcon style={{fontSize: 18}}/>
+        icon: <FeedbackIcon style={{fontSize: 18}}/>,
+        children: [
+            {
+                segment: '/',
+                title: 'Alerts'
+            },
+            {
+                segment: '/',
+                title: 'Backdrop'
+            },
+            {
+                segment: '/',
+                title: 'Dialog'
+            },
+        ]
     },
     {
-        segment: '/surfaces',
         title: 'Surfaces',
-        icon: <WebAssetIcon style={{fontSize: 18}}/>
+        icon: <WebAssetIcon style={{fontSize: 18}}/>,
+        children: [
+            {
+                segment: '/',
+                title: 'Appbar'
+            },
+            {
+                segment: '/',
+                title: 'Card'
+            },
+            {
+                segment: '/',
+                title: 'Paper'
+            },
+        ]
     },
 ];
 

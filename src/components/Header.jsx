@@ -140,14 +140,14 @@ const Header = (props) => {
                                     <div className="icon">{item.icon}</div>
                                     <div style={{ display: isOpen ? "block" : "none" }} className="link-text">{item.title}</div>
 
-                                    {item.children ? <ArrowForwardIosIcon className={`sidebar-arrow ${isOpen ? "show-icon" : "hide-icon"}`} fontSize="10px" /> : ""}
+                                    {item.children ? (<ArrowForwardIosIcon className={`sidebar-arrow ${isOpen ? "show-icon" : "hide-icon"}`} fontSize="10px" />) : null}
 
                                 </Link>
 
                                 {openChild === item.title && (
                                     <div className={`childMenu ${isOpen ? "sidebar-child-open" : "sidebar-child-closed"}`}>
                                         <div className="nav-child-items">   
-                                        {item.children.map((child, index) => (
+                                        {item.children && item.children.map((child, index) => (
                                             <Link to={child.segment} key={index}>
                                                 {child.title}
                                             </Link>
