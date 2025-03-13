@@ -2,8 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.html",
-      "use": "@vercel/static"
+      "src": "vercel-build.sh",
+      "use": "@vercel/ruby"
     }
   ],
   "routes": [
@@ -11,7 +11,8 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "RUBY_ENV": "production"
+  }
 }
-
-  
