@@ -16,7 +16,7 @@ const ProfilePopper = ({ handleClick, open, anchorEl }) => {
             <Box onClick={handleClick}>
                 <div className="profile-section1">
                     <div>
-                        <img src="https://themes.themesbrand.com/hybrix/react-material/light/static/media/avatar-1.8d5d7e809a27a1717ed1.jpg" className="profile-image"/>
+                        <img src="https://themes.themesbrand.com/hybrix/react-material/light/static/media/avatar-3.36fbb9e4e257ecafc0da.jpg" className="profile-image"/>
                     </div>
                     <div className="profile-section1-context1">
                         <h5>Ajay Dev</h5>

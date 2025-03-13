@@ -145,12 +145,14 @@ const Header = (props) => {
                                 </Link>
 
                                 {openChild === item.title && (
-                                    <div className="childMenu">
+                                    <div className={`childMenu ${isOpen ? "sidebar-child-open" : "sidebar-child-closed"}`}>
+                                        <div className="nav-child-items">   
                                         {item.children.map((child, index) => (
                                             <Link to={child.segment} key={index}>
                                                 {child.title}
                                             </Link>
                                         ))}
+                                        </div>
                                     </div>
                                 )}
                             </div>

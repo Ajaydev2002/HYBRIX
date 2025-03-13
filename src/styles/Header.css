@@ -165,14 +165,22 @@ body {
     margin-left: auto;
 }
 .childMenu {
-    display: flex;
-    flex-direction: column;
     position: relative;
     left: 40;
+}
+.nav-child-items {
+    display: flex;
+    flex-direction: column;
 }
 .childMenu a {
     color: rgb(109, 112, 128);
     padding-block: 10px;
+}
+.sidebar-child-open {
+    display: block;
+}
+.sidebar-child-closed {
+    display: none;
 }
 
 .open-searchbar {

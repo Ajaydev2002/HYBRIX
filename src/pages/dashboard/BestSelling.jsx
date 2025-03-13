@@ -12,6 +12,7 @@ const BestSelling = ({ isOpen }) => {
     const totalItems = bestSelling.length;
 
     useEffect(() => {
+        
         const updateItemsPerPage = () => {
             if (window.innerWidth <= 500) {
                 setItemsPerPage(2);
