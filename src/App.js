@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Dashboard from './components/Dashboard.jsx';
 import Authentication from './components/Authentication';
 import Error from "./components/Error.jsx";
-import PersonalChat from "./pages/dashboard/PersonalChat.jsx";
 
 
 const Applayout = () => {
